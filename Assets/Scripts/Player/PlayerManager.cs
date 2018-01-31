@@ -53,7 +53,7 @@ public class PlayerManager : MonoBehaviour
         //canRadio = true;
         playAttentionSound = false;
 
-        playerAnimator = GetComponent<Animator>();
+        //playerAnimator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         canRadio = false;
     }
@@ -157,15 +157,15 @@ public class PlayerManager : MonoBehaviour
     
     public void moveCharacter(float hMove, float vMove)
     {
-        if(hMove > 0 ){
+        /*if(hMove > 0 ){
             spriteRenderer.flipX = true;
         }
         else if(hMove < 0) {
             spriteRenderer.flipX = false;
-        }
+        }*/
 
-        playerAnimator.SetFloat("VelocityX", hMove);
-        playerAnimator.SetFloat("VelocityY", vMove);
+        //playerAnimator.SetFloat("VelocityX", hMove);
+        //playerAnimator.SetFloat("VelocityY", vMove);
 
         movementVector.Set(hMove,vMove);
         float speedToUse = playerActualSpeed();// metodo que indica cual velocidad se va a usar
@@ -173,7 +173,7 @@ public class PlayerManager : MonoBehaviour
         Vector2 actualPosition = new Vector2(this.transform.position.x, this.transform.position.y);
         playerRigidbody.MovePosition(actualPosition + movementVector);
 
-        cambiarNiveldeFrioHambre(hMove, vMove);
+        //cambiarNiveldeFrioHambre(hMove, vMove);
     }
 
     /// <summary>
@@ -215,7 +215,7 @@ public class PlayerManager : MonoBehaviour
         coldBarReference.seEstaEnfriando = true;
     }
 
-    public void cambiarNiveldeFrioHambre(float hMove, float vMove)
+    /*public void cambiarNiveldeFrioHambre(float hMove, float vMove)
     {
         if(GameManager.instance.idFranjaHoraria == 4)
         {
@@ -262,7 +262,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         
-    }
+    }*/
 
     // Metodos que manejan lo relacionado a el hambre
 
