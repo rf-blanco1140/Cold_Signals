@@ -18,6 +18,7 @@ public class PlayerManager : MonoBehaviour
     // Booleano que indica si esta corriendo o no
     public bool isRunning;
 
+    // Indica si el jugador puede moverse o no
     public bool canMove;
 
     // Vector que indica la direccion en la que se va a mover el personaje
@@ -26,21 +27,31 @@ public class PlayerManager : MonoBehaviour
     // Referencia la Rigibody2D del personaje
     private Rigidbody2D playerRigidbody;
 
+    // Referencia a la barra de hambre en la escena
     public HungerBar hungerBarReference;
 
+    // Referencia a la barra de frio en la escena
     public ColdBar coldBarReference;
 
+    // Referencia a la radio en la escena
     public GameObject radioUI;
 
+    // Indica si el jugador puede utilizar la radio o no
     public bool canRadio;
 
-    public AudioSource sonidoEntradaAntena;
+    //public AudioSource sonidoEntradaAntena;
 
+    // Indica si el jugador puede escuchar las antenas de radio o no
     private bool playAttentionSound;
 
-
+    // Referencia al animator del jugador
     private Animator playerAnimator;
-    private SpriteRenderer spriteRenderer;
+
+    // referencia al Sprite renderer del jugador
+    private SpriteRenderer playerSpriteRenderer;
+
+
+
     //-------------------------------------------------------------------
     // Metodos
     //-------------------------------------------------------------------
@@ -54,7 +65,7 @@ public class PlayerManager : MonoBehaviour
         playAttentionSound = false;
 
         //playerAnimator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        playerSpriteRenderer = GetComponent<SpriteRenderer>();
         canRadio = false;
     }
 
@@ -119,16 +130,15 @@ public class PlayerManager : MonoBehaviour
             playAttentionSound = true;
         }
 
-        if (collision.gameObject.tag == "Antena" && !sonidoEntradaAntena.isPlaying && canRadio && playAttentionSound)
+        /*if (collision.gameObject.tag == "Antena" && !sonidoEntradaAntena.isPlaying && canRadio && playAttentionSound)
         {
             sonidoEntradaAntena.Play();
             StartCoroutine(timeToPlayAttentionSoundAgain());
-        }
+        }*/
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("tag radio es " + collision.gameObject.tag);
        /* if (collision.gameObject.tag == "Radio")
         {
             Debug.Log("il radio");
@@ -139,10 +149,10 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Antena")
+        /*if(collision.gameObject.tag == "Antena")
         {
             sonidoEntradaAntena.Stop();
-        }
+        }*/
     }
 
 
@@ -173,7 +183,7 @@ public class PlayerManager : MonoBehaviour
         Vector2 actualPosition = new Vector2(this.transform.position.x, this.transform.position.y);
         playerRigidbody.MovePosition(actualPosition + movementVector);
 
-        //cambiarNiveldeFrioHambre(hMove, vMove);
+        cambiarNiveldeFrioHambre(hMove, vMove);
     }
 
     /// <summary>
@@ -215,7 +225,7 @@ public class PlayerManager : MonoBehaviour
         coldBarReference.seEstaEnfriando = true;
     }
 
-    /*public void cambiarNiveldeFrioHambre(float hMove, float vMove)
+    public void cambiarNiveldeFrioHambre(float hMove, float vMove)
     {
         if(GameManager.instance.idFranjaHoraria == 4)
         {
@@ -262,7 +272,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         
-    }*/
+    }
 
     // Metodos que manejan lo relacionado a el hambre
 

@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour
 
     public HungerBar hungerBarRefrence;
 
+
+
     //-------------------------------------------------------------------
     // Metodos
     //-------------------------------------------------------------------

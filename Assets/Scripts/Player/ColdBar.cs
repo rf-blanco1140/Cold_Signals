@@ -10,8 +10,13 @@ public class ColdBar : MonoBehaviour
     // Variables
     //-------------------------------------------------------------------
 
+    // Imagen del filler de la barra de frio
     public Image barraEnfriamiento;
+
+    // Indica si el jugador esta perdiendo calor
     public bool seEstaEnfriando;
+
+    // Maximo tiempo que dura el jugador antes de morir de firo de manera antural
     public float tiempoMaxEnfriamiento = 120.0f;
 
     // Valor minimo de enfriamiento que el jugador sufre
@@ -29,15 +34,11 @@ public class ColdBar : MonoBehaviour
     // Valor usado para calentar al jugador
     public float valorCalentamiento;
 
+
+
     //-------------------------------------------------------------------
     // Metodos
     //-------------------------------------------------------------------
-
-    // Use this for initialization
-    void Start ()
-    {
-		
-	}
 	
 	// Update is called once per frame
 	void Update ()
@@ -50,6 +51,9 @@ public class ColdBar : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Metod que vacia o llena la barra de frio/calor
+    /// </summary>
     public void fillingBarraTemperatura()
     {
         if (seEstaEnfriando == true)
@@ -63,6 +67,10 @@ public class ColdBar : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Selecciona con que valor el jugador va a perder calor
+    /// </summary>
+    /// <param name="idTipoFrio"> identificador para saber con que valor va a perder calor </param>
     public void selectValorFrio(int idTipoFrio)
     {
         switch (idTipoFrio)
@@ -87,6 +95,10 @@ public class ColdBar : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Metodo con el que se le cambia el valor al booleano que indica si el jugador tiene frio o no
+    /// </summary>
+    /// <param name="nuevoEstado"> El nuevo valor del parametro que indica si se tiene frio </param>
     public void cambiarEstadoEnfriamiento(bool nuevoEstado)
     {
         seEstaEnfriando = nuevoEstado;
