@@ -152,7 +152,16 @@ public class GameManager : MonoBehaviour
     public void gameOver()
     {
         gameOverScreen.SetActive(true);
-        player.SetActive(false);
+        //player.SetActive(false);
+        setEndBeginingValues(false);
+    }
+
+    public void setEndBeginingValues(bool daValue)
+    {
+        player.GetComponent<PlayerManager>().canMove = daValue;
+        player.GetComponent<PlayerManager>().canRadio = daValue;
+        coldBarReference.seEstaEnfriando = daValue;
+        hungerBarRefrence.estaTeniendoHambre = daValue;
     }
 
     // Metodo que reinicia el juego
