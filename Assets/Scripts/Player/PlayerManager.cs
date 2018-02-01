@@ -121,7 +121,7 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("tag radio es " + collision.gameObject.tag);
+        //Debug.Log("tag radio es " + collision.gameObject.tag);
         if (collision.gameObject.tag == "Radio" && Input.GetKey("q"))
         {
             Debug.Log("il radio");
