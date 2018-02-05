@@ -7,6 +7,7 @@ TagManager:
   - InForest
   - OutForest
   - Forest
+  - RoomDetector
   layers:
   - Default
   - TransparentFX

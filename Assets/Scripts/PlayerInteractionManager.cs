@@ -5,29 +5,48 @@ using UnityEngine;
 public class PlayerInteractionManager : MonoBehaviour
 {
 
+    //-------------------------------------------------------------------
+    // Variables
+    //-------------------------------------------------------------------
+
+    //  Indica si el personaje puede interactuar con un objeto
     [SerializeField]
     private bool canInteract;
 
+    // Indica si el personaje puede atravezar una puerta
     [SerializeField]
     private bool canGoDoor;
 
+    // Referencia al FadeController dentro de la escena
     private FadeController fadeController;
 
-    private PlayerInventoryController pic;
+    // Referencia al PlayerInventoryController dentro de la escena
+    private PlayerInventoryController playerInverntoryControlerReference;
 
+    // 
     public PickableItem currentItem;
 
+    // Referencia al RoomDetectorContoller de la puerta con la que esta interectuando en el momento
     public RoomDetectorContoller currentRoomDetector;
 
+    // Referencial al DoorwayLockController con el que esta interactuando en el momento
     public DoorwayLockController doorwayLockDetector;
     
+    // Referencia al PlayerManager en la escena
     public PlayerManager pm;
 
+    // Icono que aparece cuando el personaje puede interactuar con algo en sus cercanias
     public GameObject interactIcon;
+
+
+
+    //-------------------------------------------------------------------
+    // Metodos
+    //-------------------------------------------------------------------
 
     void Awake()
     {
-        pic = GetComponent<PlayerInventoryController>();
+        playerInverntoryControlerReference = GetComponent<PlayerInventoryController>();
         pm = FindObjectOfType<PlayerManager>();
         fadeController = FindObjectOfType<FadeController>();    
     }
@@ -35,13 +54,13 @@ public class PlayerInteractionManager : MonoBehaviour
     void Update()
     {
         Inputs();
-        if (canInteract && interactIcon != null)
+        /*if (canInteract && interactIcon != null)
         {
             interactIcon.SetActive(true);
         }
         else if(!canInteract && interactIcon !=null){
             interactIcon.SetActive(false);
-        }
+        }*/
     }
 
 
@@ -121,19 +140,18 @@ public class PlayerInteractionManager : MonoBehaviour
             if(currentItem != null){
                 if (currentItem.type == InteractableObjectType.Food)
                 {
-                    pic.AddFoodRation();
+                    playerInverntoryControlerReference.AddFoodRation();
                     Destroy(currentItem.gameObject);
                 }
                 else if (currentItem.type == InteractableObjectType.Item)
                 {
-                    pic.AddItem(currentItem);
+                    playerInverntoryControlerReference.AddItem(currentItem);
                 }
                 else if (currentItem.type == InteractableObjectType.LockedDoor)
                 {
                     if (CheckDoor())
                     {
                         currentRoomDetector = currentItem.GetComponent<RoomDetectorContoller>();
-                        currentRoomDetector.OpenDoor();
                         canInteract = false;
                         canGoDoor = true;
                         Destroy(currentItem);
@@ -172,7 +190,7 @@ public class PlayerInteractionManager : MonoBehaviour
     }
     bool CheckDoor(){
         string keyName = currentItem.name;
-        List<PickableItemInfo> currentInventory = pic.GetInventory();
+        List<PickableItemInfo> currentInventory = playerInverntoryControlerReference.GetInventory();
 
         bool unlocked = false;
 
@@ -190,7 +208,7 @@ public class PlayerInteractionManager : MonoBehaviour
     bool CheckDoorway()
     {
         string keyName = doorwayLockDetector.keyName;
-        List<PickableItemInfo> currentInventory = pic.GetInventory();
+        List<PickableItemInfo> currentInventory = playerInverntoryControlerReference.GetInventory();
 
         bool unlocked = false;
 
@@ -222,8 +240,8 @@ public class PlayerInteractionManager : MonoBehaviour
 
 
         yield return new WaitForSeconds(1f);
-        pm.transform.position = currentRoomDetector.destinationRoom.transform.position;
-        Camera.main.gameObject.transform.position = new Vector3(currentRoomDetector.destinationRoom.transform.position.x, currentRoomDetector.destinationRoom.transform.position.y, -10f);
+        pm.transform.position = currentRoomDetector.destinationDoor.transform.position;
+        Camera.main.gameObject.transform.position = new Vector3(currentRoomDetector.destinationDoor.transform.position.x, currentRoomDetector.destinationDoor.transform.position.y, -10f);
 
 
         currentRoomDetector.HideScenes();

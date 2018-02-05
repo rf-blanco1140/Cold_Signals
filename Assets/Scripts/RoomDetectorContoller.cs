@@ -2,36 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomDetectorContoller : MonoBehaviour {
+public class RoomDetectorContoller : MonoBehaviour
+{
+    //-------------------------------------------------------------------
+    // Variables
+    //-------------------------------------------------------------------
 
+    // Area del mapa en la que actualmente se esta 
+    public GameObject actualArea;
 
-    public GameObject parentScene;
+    // Area del mapa a la que se quiere dirigir
+    public GameObject objectiveArea;
 
-    public GameObject objectiveScene;
+    // Puerta objetivo por la que se va a aparecer en la otra habitacion
+    public RoomDetectorContoller destinationDoor;
 
-    public RoomDetectorContoller destinationRoom;
-
+    // Lado de la puerta por el que se accede a esta
     public DoorEntranceSide entranceSide;
 
-    public Sprite openDoorSprite;
-
+    // Indica si el destino de la puerta es caliente o le va a dar frio al personaje
     public bool destinationIsWarm;
 
 
-    public void HideScenes(){
-        parentScene.SetActive(false);
-        objectiveScene.SetActive(true);
-    }
 
-    public void OpenDoor()
+    //-------------------------------------------------------------------
+    // Metodos
+    //-------------------------------------------------------------------
+
+
+    /// <summary>
+    /// Esconde la escena actual y activa la escena objetivo
+    /// </summary>
+    public void HideScenes()
     {
-        
-
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        if (sr != null)
-            sr.sprite = openDoorSprite;
+        actualArea.SetActive(false);
+        objectiveArea.SetActive(true);
     }
-    
+
+    /// <summary>
+    /// Cambia el estado de recivir o no calor del personaje a su opuesto
+    /// </summary>
     public void changeColdStatus()
     {
         GameManager.instance.coldBarReference.cambiarEstadoEnfriamiento(!destinationIsWarm);
@@ -39,4 +49,7 @@ public class RoomDetectorContoller : MonoBehaviour {
 
 }
 
+/// <summary>
+/// ENUM que contiene los lados por los que se puede entrar a la puerta
+/// </summary>
 public enum DoorEntranceSide{ Left, Right, Up, Down}
