@@ -103525,7 +103525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &83327572
 Transform:
   m_ObjectHideFlags: 0
@@ -104880,6 +104880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 439455972}
   - component: {fileID: 439455974}
+  - component: {fileID: 439455973}
   m_Layer: 0
   m_Name: PuertoBosque
   m_TagString: Forest
@@ -104900,6 +104901,18 @@ Transform:
   m_Father: {fileID: 762871202}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &439455973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 439455971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78503c765fb94c449a9ccab7a69d939f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pairEntrance: {fileID: 83327571}
 --- !u!61 &439455974
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -108130,6 +108143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1172616804}
   - component: {fileID: 1172616805}
+  - component: {fileID: 1172616806}
   m_Layer: 0
   m_Name: PuertoBosque
   m_TagString: Forest
@@ -108175,6 +108189,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9645691, y: 74.53794}
   m_EdgeRadius: 0
+--- !u!114 &1172616806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1172616803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78503c765fb94c449a9ccab7a69d939f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pairEntrance: {fileID: 762871201}
 --- !u!1 &1318224075
 GameObject:
   m_ObjectHideFlags: 0
@@ -109247,7 +109273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barraEnfriamiento: {fileID: 600269216}
-  seEstaEnfriando: 1
+  seEstaEnfriando: 0
   tiempoMaxEnfriamiento: 120
   enfriamientoBajo: 0.5
   enfriameintoMedio: 1
@@ -109362,6 +109388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1553125926}
   - component: {fileID: 1553125928}
+  - component: {fileID: 1553125927}
   m_Layer: 0
   m_Name: PuertoBosque (1)
   m_TagString: Forest
@@ -109376,12 +109403,24 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1553125925}
   m_LocalRotation: {x: -0, y: -0, z: -0.22292678, w: 0.9748352}
-  m_LocalPosition: {x: -303.5, y: -42.7, z: 0}
+  m_LocalPosition: {x: -286.2, y: -51.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 762871202}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -25.762001}
+--- !u!114 &1553125927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1553125925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78503c765fb94c449a9ccab7a69d939f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pairEntrance: {fileID: 83327571}
 --- !u!61 &1553125928
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -111014,6 +111053,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1974133205}
   - component: {fileID: 1974133206}
+  - component: {fileID: 1974133207}
   m_Layer: 0
   m_Name: PuertoBosque (1)
   m_TagString: Forest
@@ -111059,6 +111099,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.232404, y: 96.025375}
   m_EdgeRadius: 0
+--- !u!114 &1974133207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1974133204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78503c765fb94c449a9ccab7a69d939f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pairEntrance: {fileID: 762871201}
 --- !u!1 &1984710355
 GameObject:
   m_ObjectHideFlags: 0

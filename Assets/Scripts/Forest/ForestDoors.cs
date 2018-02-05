@@ -9,12 +9,11 @@ public class ForestDoors : MonoBehaviour
     // Variables
     //-------------------------------------------------------------------
 
-    // Indica si este es una entarda o una salida al bosque
-    public bool estaEntrando;
-
     // Instancia del manager de los bosques
     private EvilForest forestInstance;
 
+    // El contrario a la entrada/salida actual
+    public GameObject pairEntrance;
 
 
     //-------------------------------------------------------------------
@@ -26,50 +25,26 @@ public class ForestDoors : MonoBehaviour
     {
         forestInstance = EvilForest.instance;
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player")
         {
-            if (estaEntrando)
-            {
-                forestInstance.dentroDelBosque = true;
-                StartCoroutine(forestInstance.countDownToDie());
-                //Debug.Log("Entro al bosquesito");
-            }
-            else
-            {
-                //StopCoroutine(forestInstance.countDownToDie());
-                forestInstance.dentroDelBosque = false;
-                forestInstance.restartTime();
-                //Debug.Log("Quiso salir del bosquesito");
-            }
+            cambioDePuerta();
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    /// <summary>
+    /// Activa el collider de la puerta contraria a esta
+    /// Se considera una puerta contraria la puerta de salida si esta es la de entrada o viceversa
+    /// </summary>
+    public void cambioDePuerta()
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            if (estaEntrando)
-            {
-                forestInstance.dentroDelBosque = true;
-                StartCoroutine(forestInstance.countDownToDie());
-                //Debug.Log("Entro al bosquesito");
-            }
-            else
-            {
-                //StopCoroutine(forestInstance.countDownToDie());
-                forestInstance.dentroDelBosque = false;
-                forestInstance.restartTime();
-                //Debug.Log("Quiso salir del bosquesito");
-            }
-        }
+        //pairEntrance.GetComponent<BoxCollider2D>().enabled = true;
+        //this.GetComponent<BoxCollider2D>().enabled = false;
+        pairEntrance.SetActive(true);
+        this.transform.parent.gameObject.SetActive(false); //gameObject.SetActive(false);
     }
+
+
 }
