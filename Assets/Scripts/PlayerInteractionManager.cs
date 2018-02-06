@@ -23,7 +23,8 @@ public class PlayerInteractionManager : MonoBehaviour
     // Referencia al PlayerInventoryController dentro de la escena
     private PlayerInventoryController playerInverntoryControlerReference;
 
-    // 
+    // Item con el que esta interactuando en el momento el usuario
+    // cuando no esta interactuando con nada este es null
     public PickableItem currentItem;
 
     // Referencia al RoomDetectorContoller de la puerta con la que esta interectuando en el momento
@@ -66,17 +67,18 @@ public class PlayerInteractionManager : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Item")
+        if (other.tag == "Item") // entra en contacto con un iterm y se activa la capacidad de interactuar con este
         {
             PickableItem pim = other.GetComponent<PickableItem>();
             currentItem = pim;
 
             canInteract = true;
         }
-        else if(other.tag == "RoomDetector"){
+        else if(other.tag == "RoomDetector")
+        {
 
-            if (other.gameObject.GetComponent<PickableItem>() != null) {
-
+            if (other.gameObject.GetComponent<PickableItem>() != null)
+            {
                 //La puerta tiene un candado  
                 currentItem = other.GetComponent<PickableItem>();
                 canInteract = true;
@@ -86,7 +88,8 @@ public class PlayerInteractionManager : MonoBehaviour
                 currentRoomDetector = other.GetComponent<RoomDetectorContoller>();
                 canGoDoor = true;
             }
-            else if (other.GetComponent<DoorwayLockController>() != null) {
+            else if (other.GetComponent<DoorwayLockController>() != null)
+            {
                 doorwayLockDetector = other.GetComponent<DoorwayLockController>();
                 canInteract = true;
             }
@@ -133,11 +136,16 @@ public class PlayerInteractionManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Metodo que maneja el recibimiento de inputs dentro del juego
+    /// </summary>
     void Inputs()
     {
+        // Interaccion con el boton de interactuar y un objeto interactuable
         if (canInteract && Input.GetButton("Fire1"))
         {
-            if(currentItem != null){
+            if(currentItem != null)
+            {
                 if (currentItem.type == InteractableObjectType.Food)
                 {
                     playerInverntoryControlerReference.AddFoodRation();
@@ -149,6 +157,7 @@ public class PlayerInteractionManager : MonoBehaviour
                 }
                 else if (currentItem.type == InteractableObjectType.LockedDoor)
                 {
+                    Debug.Log("WTF");
                     if (CheckDoor())
                     {
                         currentRoomDetector = currentItem.GetComponent<RoomDetectorContoller>();
@@ -160,12 +169,13 @@ public class PlayerInteractionManager : MonoBehaviour
                     {
                         canInteract = false;
                         //No tienes la llave papu
-
                     }
                 }
             }
-            else if (doorwayLockDetector != null) {
-            if(CheckDoorway()){
+            else if (doorwayLockDetector != null)
+            {
+                if(CheckDoorway())
+                {
                     canInteract = false;
                     doorwayLockDetector.DoEvents();
                 }
@@ -174,37 +184,58 @@ public class PlayerInteractionManager : MonoBehaviour
             }
         }
 
+        // parte que maneja el entrar a una puerta desbloqueada o que no tenia seguro
         double horizontalMove = Input.GetAxis("Horizontal");
         double verticalMove = Input.GetAxis("Vertical");
 
-        if (pm.canMove && canGoDoor && (horizontalMove != 0 || verticalMove != 0)) {
+        enterDoor(horizontalMove, verticalMove);
+    }
+
+    /// <summary>
+    /// Metodo que ingresa al jugador a un puerta en base a donde esta el lado por el que se entra y por donde esta entrando el jugador
+    /// </summary>
+    /// <param name="horizontalMove"> valor que indica si se mueve por la izq, por la der o simplemente no se mueve horizontalmente </param>
+    /// <param name="verticalMove"> valor que indica si se mueve por arriba, por abajo o simplemente no se mueve verticalmente </param>
+    public void enterDoor(double horizontalMove, double verticalMove)
+    {
+        if (pm.canMove && canGoDoor && (horizontalMove != 0 || verticalMove != 0))
+        {
             DoorEntranceSide entrance = currentRoomDetector.entranceSide;
 
-            if ((entrance == DoorEntranceSide.Up && verticalMove > 0)|| (entrance == DoorEntranceSide.Down && verticalMove < 0)|| (entrance == DoorEntranceSide.Left && horizontalMove < 0) || (entrance == DoorEntranceSide.Right && horizontalMove > 0))
+            if ((entrance == DoorEntranceSide.Up && verticalMove > 0) || (entrance == DoorEntranceSide.Down && verticalMove < 0) || (entrance == DoorEntranceSide.Left && horizontalMove < 0) || (entrance == DoorEntranceSide.Right && horizontalMove > 0))
             {
-                pm.canMove = false;                
+                pm.canMove = false;
                 StartCoroutine(GoInDoor());
             }
-            
+
         }
     }
-    bool CheckDoor(){
+
+    /// <summary>
+    /// Revisa si tiene el item para abrir la puerta
+    /// </summary>
+    /// <returns> Retorna un bool indicando si se pudo abrir o no la puerta </returns>
+    bool CheckDoor()
+    {
         string keyName = currentItem.name;
         List<PickableItemInfo> currentInventory = playerInverntoryControlerReference.GetInventory();
 
         bool unlocked = false;
 
-        for (int i =0; i<currentInventory.Count && !unlocked; i++){
-        
-            if(keyName == currentInventory[i].name){
+        for (int i =0; i<currentInventory.Count && !unlocked; i++)
+        {
+            if(keyName == currentInventory[i].name)
+            {
                 unlocked = true;
             }
-            
         }
-
         return unlocked;
     }
 
+    /// <summary>
+    /// Revisa si tiene el item para abrir la puerta
+    /// </summary>
+    /// <returns> Retorna un bool indicando si se pudo abrir o no la puerta </returns>
     bool CheckDoorway()
     {
         string keyName = doorwayLockDetector.keyName;
@@ -225,12 +256,20 @@ public class PlayerInteractionManager : MonoBehaviour
         return unlocked;
     }
 
+    /// <summary>
+    /// Cambia el estado de recivir frio del jugador al contrario del valor enviado como parametro
+    /// </summary>
+    /// <param name="destinationIsWarm"> el valor contrario del que se le va a poner al jugador </param>
     public void changeColdStatus(bool destinationIsWarm)
     {
 
         GameManager.instance.coldBarReference.cambiarEstadoEnfriamiento(!destinationIsWarm);
     }
 
+    /// <summary>
+    /// Moeve al jugador a la nueva area, activa el fadeOute y desactiva el area original
+    /// </summary>
+    /// <returns></returns>
     IEnumerator GoInDoor()
     {
         bool destinationIsWarm = currentRoomDetector.destinationIsWarm;
@@ -254,4 +293,7 @@ public class PlayerInteractionManager : MonoBehaviour
     
 }
 
+/// <summary>
+/// Indica que tipo de objetos interactuables hay
+/// </summary>
 public enum InteractableObjectType { Food, Item, LockedDoor }

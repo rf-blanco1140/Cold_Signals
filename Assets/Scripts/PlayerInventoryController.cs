@@ -4,14 +4,28 @@ using UnityEngine;
 
 
 
-public class PlayerInventoryController : MonoBehaviour {
+public class PlayerInventoryController : MonoBehaviour
+{
 
+    //-------------------------------------------------------------------
+    // Variables
+    //-------------------------------------------------------------------
+
+    // Lista de objetos recogidos 
     [SerializeField]
     private List<PickableItemInfo> inventory;
 
+    // Cuantas raciones de comida tiene el jugador
     public int foodRations;
 
+    // Referencia al controlador de la parte grafica del inventario
     public InventoryUIController uiController;
+
+
+
+    //-------------------------------------------------------------------
+    // Metodos
+    //-------------------------------------------------------------------
 
     void Awake()
     {
@@ -28,6 +42,10 @@ public class PlayerInventoryController : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Agrega un item a la lista de items que tiene el jugador
+    /// </summary>
+    /// <param name="newItem"> el nuevo item recogido </param>
     public void AddItem(PickableItem newItem){
         PickableItemInfo i = newItem.piInfo;
 
@@ -35,15 +53,21 @@ public class PlayerInventoryController : MonoBehaviour {
 
         Destroy(newItem.gameObject);
 
-        uiController.AddItemUI(i);
+        //uiController.AddItemUI(i);
     }
 
+    /// <summary>
+    /// Agrega raciones de comida al inventario
+    /// </summary>
     public void AddFoodRation()
     {
         foodRations++;
         uiController.UpdateRations(foodRations);
     }
 
+    /// <summary>
+    /// Consume una racion de comida del inventario si la tiene
+    /// </summary>
     public void comer()
     {
         if(foodRations>0)
@@ -54,6 +78,10 @@ public class PlayerInventoryController : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Devuelve la lista del inventario del jugador
+    /// </summary>
+    /// <returns> La lista del inventario del jugador </returns>
     public List<PickableItemInfo> GetInventory(){
         return inventory;
     }
