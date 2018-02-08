@@ -64,7 +64,7 @@ public class PlayerManager : MonoBehaviour
         //canRadio = true;
         playAttentionSound = false;
 
-        //playerAnimator = GetComponent<Animator>();
+        playerAnimator = GetComponent<Animator>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
         canRadio = true;
     }
@@ -116,9 +116,19 @@ public class PlayerManager : MonoBehaviour
         //Deteccion del input de movimiento
         float horizontalMove = Input.GetAxisRaw("Horizontal");
         float verticalMove = Input.GetAxisRaw("Vertical");
+
         //Llamada al metodo que mueve al juagdor
         if (canMove)
             moveCharacter(horizontalMove, verticalMove);
+
+        if (horizontalMove != 0 || verticalMove != 0)
+        {
+            playerAnimator.SetBool("caminando", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("caminando", false);
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -160,13 +170,17 @@ public class PlayerManager : MonoBehaviour
         //playerAnimator.SetFloat("VelocityX", hMove);
         //playerAnimator.SetFloat("VelocityY", vMove);
 
-        movementVector.Set(hMove, vMove);
+            movementVector.Set(hMove, vMove);
             float speedToUse = playerActualSpeed();// metodo que indica cual velocidad se va a usar
             movementVector = movementVector.normalized * speedToUse * Time.deltaTime;
             Vector2 actualPosition = new Vector2(this.transform.position.x, this.transform.position.y);
             playerRigidbody.MovePosition(actualPosition + movementVector);
 
-            cambiarNiveldeFrioHambre(hMove, vMove);
+        playerAnimator.SetFloat("vertical", vMove);
+        playerAnimator.SetFloat("horizontal", hMove);
+
+
+        cambiarNiveldeFrioHambre(hMove, vMove);
         
     }
 
