@@ -12,12 +12,18 @@ public class SignalReceptor : MonoBehaviour {
 
     public AudioSource audioSource;
 
+    bool reproduciendo = false;
+
     float limite = 0.97f;
+
+    float margen = 3f;
 
     int expectedFrequency;
 	// Use this for initialization
 	void Start () {
         audioSource.volume = 1;
+        audioSource.Stop();
+        audioSource.PlayOneShot(estatica);
 
         expectedFrequency = (int) (Random.Range(-limite, limite)*100);
         Debug.Log(expectedFrequency);
@@ -44,20 +50,36 @@ public class SignalReceptor : MonoBehaviour {
 
     private void compararLimite()
     {
-        if (handle.transform.rotation.z == expectedFrequency)
+        Debug.Log(Mathf.Abs(handle.transform.rotation.z * 100));
+        if (Mathf.Abs(handle.transform.rotation.z*100 - expectedFrequency) <= margen)
         {
-            Debug.Log(":v");
+            if (!reproduciendo)
+            {
+                audioSource.Stop();
+                reproduciendo = true;
+                audioSource.clip = sonido;
+                audioSource.PlayOneShot(sonido);
+            }
+            else
+            {
 
-            audioSource.Stop();
-            audioSource.PlayOneShot(sonido);
+            }
         }
         else
         {
-            if (audioSource.clip != estatica && audioSource.isPlaying)
+            if (audioSource.clip == null)
             {
-                audioSource.Stop();
+                audioSource.clip = estatica;
                 audioSource.PlayOneShot(estatica);
             }
+            else if (audioSource.clip != estatica && audioSource.isPlaying)
+            {
+                audioSource.Stop();
+                audioSource.clip = estatica;
+                audioSource.PlayOneShot(estatica);
+            }
+
+            reproduciendo = false;
         }
     }
 }
