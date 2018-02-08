@@ -22,8 +22,6 @@ public class SignalReceptor : MonoBehaviour {
 
     void Start () {
         audioSource.volume = 1;
-        audioSource.Stop();
-        audioSource.PlayOneShot(estatica);
     }
 
 
@@ -42,6 +40,16 @@ public class SignalReceptor : MonoBehaviour {
             }
             compararLimite();
         }
+    }
+
+    void OnDisable()
+    {
+
+    }
+
+    void OnEnable()
+    {
+        handle.transform.rotation = new Quaternion(0, 0, 0, 0);
     }
 
     private void compararLimite()
