@@ -26,7 +26,6 @@ public class SignalReceptor : MonoBehaviour {
         audioSource.PlayOneShot(estatica);
 
         expectedFrequency = (int) (Random.Range(-limite, limite)*100);
-        Debug.Log(expectedFrequency);
 
     }
 
@@ -50,7 +49,6 @@ public class SignalReceptor : MonoBehaviour {
 
     private void compararLimite()
     {
-        Debug.Log(Mathf.Abs(handle.transform.rotation.z * 100));
         if (Mathf.Abs(handle.transform.rotation.z*100 - expectedFrequency) <= margen)
         {
             if (!reproduciendo)
