@@ -34,7 +34,7 @@ public class PlayerManager : MonoBehaviour
     public ColdBar coldBarReference;
 
     // Referencia a la radio en la escena
-    public GameObject radioUI;
+    public UIManager interfaz;
 
     // Indica si el jugador puede utilizar la radio o no
     public bool canRadio;
@@ -66,7 +66,7 @@ public class PlayerManager : MonoBehaviour
 
         //playerAnimator = GetComponent<Animator>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
-        canRadio = false;
+        canRadio = true;
     }
 
     private void Update()
@@ -81,10 +81,11 @@ public class PlayerManager : MonoBehaviour
         {
             isRunning = false;
         }
-        if(Input.GetKey("r") && canMove && canRadio)
+        if(Input.GetKey("r") && canRadio)
         {
-            openRadio();
+            interfaz.toggleRadio();
             StartCoroutine(waitToRadio());
+            canMove = !canMove;
         }
     }
 
@@ -102,10 +103,11 @@ public class PlayerManager : MonoBehaviour
     {
         StartCoroutine(waitToRadio());
     }
+
     public IEnumerator waitToRadio()
     {
         canRadio = false;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.3f);
         canRadio = true;
     }
 
@@ -137,25 +139,6 @@ public class PlayerManager : MonoBehaviour
         }*/
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-       /* if (collision.gameObject.tag == "Radio")
-        {
-            Debug.Log("il radio");
-            canRadio = true;
-            collision.gameObject.SetActive(false);
-        }*/
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        /*if(collision.gameObject.tag == "Antena")
-        {
-            sonidoEntradaAntena.Stop();
-        }*/
-    }
-
-
     // Metodos relacionados con el movimiento
 
     /// <summary>
@@ -177,13 +160,14 @@ public class PlayerManager : MonoBehaviour
         //playerAnimator.SetFloat("VelocityX", hMove);
         //playerAnimator.SetFloat("VelocityY", vMove);
 
-        movementVector.Set(hMove,vMove);
-        float speedToUse = playerActualSpeed();// metodo que indica cual velocidad se va a usar
-        movementVector = movementVector.normalized * speedToUse * Time.deltaTime;
-        Vector2 actualPosition = new Vector2(this.transform.position.x, this.transform.position.y);
-        playerRigidbody.MovePosition(actualPosition + movementVector);
+        movementVector.Set(hMove, vMove);
+            float speedToUse = playerActualSpeed();// metodo que indica cual velocidad se va a usar
+            movementVector = movementVector.normalized * speedToUse * Time.deltaTime;
+            Vector2 actualPosition = new Vector2(this.transform.position.x, this.transform.position.y);
+            playerRigidbody.MovePosition(actualPosition + movementVector);
 
-        cambiarNiveldeFrioHambre(hMove, vMove);
+            cambiarNiveldeFrioHambre(hMove, vMove);
+        
     }
 
     /// <summary>
@@ -280,12 +264,6 @@ public class PlayerManager : MonoBehaviour
     {
         // Llama al metodo de la hunger bar que la llena en base a un valor
         hungerBarReference.alimentarEnBaseAValor();
-    }
-
-
-    public void openRadio()
-    {
-        radioUI.SetActive(true);
     }
 
     public IEnumerator timeToPlayAttentionSoundAgain()

@@ -62,7 +62,7 @@ public class PlayerInventoryController : MonoBehaviour
     public void AddFoodRation()
     {
         foodRations++;
-        uiController.UpdateRations(foodRations);
+        //uiController.UpdateRations(foodRations);
     }
 
     /// <summary>
@@ -74,7 +74,7 @@ public class PlayerInventoryController : MonoBehaviour
         {
             foodRations--;
             GameManager.instance.hungerBarRefrence.alimentarEnBaseAValor();
-            uiController.UpdateRations(foodRations);
+            //uiController.UpdateRations(foodRations);
         }
     }
 
