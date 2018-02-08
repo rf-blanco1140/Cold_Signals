@@ -8,7 +8,7 @@ public class SignalReceptor : MonoBehaviour {
 
     public AudioClip estatica;
 
-    public AudioClip sonido;
+    AudioClip sonido;
 
     public AudioSource audioSource;
 
@@ -18,21 +18,18 @@ public class SignalReceptor : MonoBehaviour {
 
     float margen = 3f;
 
-    int expectedFrequency;
-	// Use this for initialization
-	void Start () {
+    int expectedFrequency = 0;
+
+    void Start () {
         audioSource.volume = 1;
         audioSource.Stop();
         audioSource.PlayOneShot(estatica);
-
-        expectedFrequency = (int) (Random.Range(-limite, limite)*100);
-
     }
 
 
     private void FixedUpdate()
     {
-        if (gameObject.activeInHierarchy)
+        if (gameObject.activeInHierarchy && expectedFrequency != 0)
         {
             float horizontalMove = Input.GetAxisRaw("Horizontal");
             if (horizontalMove < 0 && handle.transform.rotation.z <= limite)
@@ -79,5 +76,11 @@ public class SignalReceptor : MonoBehaviour {
 
             reproduciendo = false;
         }
+    }
+
+    public void actualizarFrecuencia(int frec, AudioClip elSonido)
+    {
+        expectedFrequency = frec;
+        sonido = elSonido;
     }
 }

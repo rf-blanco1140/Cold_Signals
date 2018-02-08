@@ -68,8 +68,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613fe52792fa14546aa10d24586f601c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 8300000, guid: 9a3b237257f0a0b48b22079621e6f5c4, type: 3}
+  sonidoCercania: {fileID: 8300000, guid: 83881a4f10b55e84497f1004d3d675c8, type: 3}
+  sonidoAntena: {fileID: 8300000, guid: 0939b90111da94b4ab4a4c7840443ee9, type: 3}
   audioSource: {fileID: 0}
+  elRadio: {fileID: 0}
 --- !u!212 &212847626455061226
 SpriteRenderer:
   m_ObjectHideFlags: 1
