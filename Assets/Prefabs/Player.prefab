@@ -42,6 +42,8 @@ GameObject:
   - component: {fileID: 50264843402472212}
   - component: {fileID: 61513139315929688}
   - component: {fileID: 114695785728057772}
+  - component: {fileID: 114871812773159146}
+  - component: {fileID: 114980079265809342}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -69,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1688197702610376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 60, y: 15.8, z: 0}
+  m_LocalPosition: {x: -92.5, y: -57.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4199026522252732}
@@ -178,10 +180,10 @@ MonoBehaviour:
   playerWalkSpeed: 50
   playerRunSpeed: 100
   isRunning: 0
-  canMove: 0
+  canMove: 1
   hungerBarReference: {fileID: 0}
   coldBarReference: {fileID: 0}
-  radioUI: {fileID: 0}
+  interfaz: {fileID: 0}
   canRadio: 0
 --- !u!114 &114695785728057772
 MonoBehaviour:
@@ -195,6 +197,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dentroDelBosque: 0
+--- !u!114 &114871812773159146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1688197702610376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a121b8499eeca584ea64c55e6874975d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: []
+  foodRations: 0
+  uiManagerReference: {fileID: 0}
+--- !u!114 &114980079265809342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1688197702610376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d562c768f27114689df8ee47783ffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canInteract: 0
+  canGoDoor: 0
+  currentItem: {fileID: 0}
+  currentRoomDetector: {fileID: 0}
+  doorwayLockDetector: {fileID: 0}
+  pm: {fileID: 0}
+  interactIcon: {fileID: 0}
 --- !u!124 &124190729648951604
 Behaviour:
   m_ObjectHideFlags: 1

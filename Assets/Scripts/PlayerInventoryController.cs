@@ -19,7 +19,7 @@ public class PlayerInventoryController : MonoBehaviour
     public int foodRations;
 
     // Referencia al controlador de la parte grafica del inventario
-    public InventoryUIController uiController;
+    public UIManager uiManagerReference;
 
 
 
@@ -30,8 +30,8 @@ public class PlayerInventoryController : MonoBehaviour
     void Awake()
     {
         inventory = new List<PickableItemInfo>();
-        if(uiController == null)
-            uiController = FindObjectOfType<InventoryUIController>();
+        if(uiManagerReference == null)
+            uiManagerReference = FindObjectOfType<UIManager>();
     }
 
     private void Update()
@@ -46,14 +46,17 @@ public class PlayerInventoryController : MonoBehaviour
     /// Agrega un item a la lista de items que tiene el jugador
     /// </summary>
     /// <param name="newItem"> el nuevo item recogido </param>
-    public void AddItem(PickableItem newItem){
+    public void AddItem(PickableItem newItem)
+    {
         PickableItemInfo i = newItem.piInfo;
 
         inventory.Add(i);
 
         Destroy(newItem.gameObject);
 
-        //uiController.AddItemUI(i);
+        //if (newItem.spriteItem == null) { Debug.Log("la imagen en nula"); }
+        //else { Debug.Log("la imagen es no nula"); }
+        uiManagerReference.addItem(newItem.spriteItem);
     }
 
     /// <summary>

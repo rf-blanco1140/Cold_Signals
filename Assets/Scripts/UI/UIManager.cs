@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject barras;
 
+    public GameObject inventario;
+
 
     //-------------------------------------------------------------------
     // Metodos
@@ -22,6 +24,7 @@ public class UIManager : MonoBehaviour
     void Start () {
         radio.SetActive(false);
         barras.SetActive(true);
+        inventario = GameObject.Find("Inventario");
     }
     
     /// <summary>
@@ -32,5 +35,24 @@ public class UIManager : MonoBehaviour
     {
         radio.SetActive(!radio.activeInHierarchy);
         barras.SetActive(!barras.activeInHierarchy);
+    }
+
+
+    public void addItem(Sprite imagenObjeto)
+    {
+        //if (imagenObjeto == null) { Debug.Log("la imagen en nula"); }
+        //else { Debug.Log("la imagen es no nula"); }
+
+        bool slotLibre = false;
+
+        for(int i=0; i < inventario.transform.childCount && !slotLibre; i++)
+        {
+            slotLibre = !inventario.transform.GetChild(i).GetComponent<ItemSlot>().tieneObjeto;
+
+            if(slotLibre)
+            {
+                inventario.transform.GetChild(i).GetComponent<ItemSlot>().agregarImagenObjeto(imagenObjeto);
+            }
+        }
     }
 }

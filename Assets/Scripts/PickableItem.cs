@@ -11,20 +11,20 @@ public class PickableItem : MonoBehaviour
     [Tooltip("Its the key name if its a locked door")]
     public string name;
     public InteractableObjectType type;
-    private Sprite sprite;
+    public Sprite spriteItem;
     
     void Awake(){
       
         
-            if (sprite == null && type != InteractableObjectType.LockedDoor)
+            if (spriteItem == null && type != InteractableObjectType.LockedDoor)
             {
-                sprite = GetComponent<SpriteRenderer>().sprite;
+                spriteItem = GetComponent<SpriteRenderer>().sprite;
             }
 
             piInfo = new PickableItemInfo();
             piInfo.name = name;
             piInfo.type = type;
-            piInfo.sprite = sprite;
+            piInfo.sprite = spriteItem;
         }
 }
 
