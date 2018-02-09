@@ -21,7 +21,8 @@ public class PlayerInventoryController : MonoBehaviour
     // Referencia al controlador de la parte grafica del inventario
     public UIManager uiManagerReference;
 
-
+    // Indica si el jugador puede comer en este momento
+    private bool canEat;
 
     //-------------------------------------------------------------------
     // Metodos
@@ -29,6 +30,7 @@ public class PlayerInventoryController : MonoBehaviour
 
     void Awake()
     {
+        canEat = true;
         inventory = new List<PickableItemInfo>();
         if(uiManagerReference == null)
             uiManagerReference = FindObjectOfType<UIManager>();
@@ -36,7 +38,7 @@ public class PlayerInventoryController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey("e"))
+        if (Input.GetKey("e") && canEat)
         {
             comer();
         }
@@ -54,8 +56,6 @@ public class PlayerInventoryController : MonoBehaviour
 
         Destroy(newItem.gameObject);
 
-        //if (newItem.spriteItem == null) { Debug.Log("la imagen en nula"); }
-        //else { Debug.Log("la imagen es no nula"); }
         uiManagerReference.addItem(newItem.spriteItem);
     }
 
@@ -65,7 +65,7 @@ public class PlayerInventoryController : MonoBehaviour
     public void AddFoodRation()
     {
         foodRations++;
-        //uiController.UpdateRations(foodRations);
+        uiManagerReference.changeNumRations(foodRations);
     }
 
     /// <summary>
@@ -77,7 +77,9 @@ public class PlayerInventoryController : MonoBehaviour
         {
             foodRations--;
             GameManager.instance.hungerBarRefrence.alimentarEnBaseAValor();
-            //uiController.UpdateRations(foodRations);
+            uiManagerReference.changeNumRations(foodRations);
+            canEat = false;
+            StartCoroutine(comerLag());
         }
     }
 
@@ -85,10 +87,20 @@ public class PlayerInventoryController : MonoBehaviour
     /// Devuelve la lista del inventario del jugador
     /// </summary>
     /// <returns> La lista del inventario del jugador </returns>
-    public List<PickableItemInfo> GetInventory(){
+    public List<PickableItemInfo> GetInventory()
+    {
         return inventory;
     }
 
-   
+   /// <summary>
+   /// Espacio de tiempo entre una accion de comer raciones y otra
+   /// </summary>
+   /// <returns></returns>
+    public IEnumerator comerLag()
+    {
+        yield return new WaitForSeconds(0.5f);
+        canEat = true;
+    }
+
 }
 

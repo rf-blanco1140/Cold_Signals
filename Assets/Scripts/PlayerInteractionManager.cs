@@ -148,7 +148,7 @@ public class PlayerInteractionManager : MonoBehaviour
             {
                 if (currentItem.type == InteractableObjectType.Food)
                 {
-                    Debug.Log("quiere comer");
+                    //Debug.Log("quiere comer");
                     playerInverntoryControlerReference.AddFoodRation();
                     Destroy(currentItem.gameObject);
                 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -15,16 +16,22 @@ public class UIManager : MonoBehaviour
 
     public GameObject inventario;
 
+    private GameObject raciones;
 
     //-------------------------------------------------------------------
     // Metodos
     //-------------------------------------------------------------------
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         radio.SetActive(false);
         barras.SetActive(true);
         inventario = GameObject.Find("Inventario");
+        //Inicializa las raciones
+        raciones = GameObject.Find("RacionesUI");
+        if (raciones.GetComponentInChildren<Text>() == null) { Debug.Log("raciones nulas mi capitan texto"); }
+        raciones.GetComponentInChildren<Text>().text = "0";
     }
     
     /// <summary>
@@ -37,12 +44,12 @@ public class UIManager : MonoBehaviour
         barras.SetActive(!barras.activeInHierarchy);
     }
 
-
+    /// <summary>
+    /// Agega el objeto pasado por parametro a uno de los espacios libres del inventario en pantalla
+    /// </summary>
+    /// <param name="imagenObjeto"> Sprite del objeto que se agrego al inventario </param>
     public void addItem(Sprite imagenObjeto)
     {
-        //if (imagenObjeto == null) { Debug.Log("la imagen en nula"); }
-        //else { Debug.Log("la imagen es no nula"); }
-
         bool slotLibre = false;
 
         for(int i=0; i < inventario.transform.childCount && !slotLibre; i++)
@@ -55,4 +62,14 @@ public class UIManager : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// cambia el numero de raciones que tien el jugador a las pasadas por parametro
+    /// </summary>
+    /// <param name="numRations"></param>
+    public void changeNumRations(int numRations)
+    {
+        raciones.GetComponentInChildren<Text>().text = "" + numRations + "";
+    }
+
 }

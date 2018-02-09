@@ -128,6 +128,8 @@ public class PlayerManager : MonoBehaviour
         else
         {
             playerAnimator.SetBool("caminando", false);
+            playerAnimator.SetFloat("vertical", 0);
+            playerAnimator.SetFloat("horizontal", 0);
         }
     }
 
