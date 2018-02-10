@@ -22,6 +22,10 @@ public class RadioSignal : MonoBehaviour {
 
     float radioInterior = 80f;
 
+    public string mensajeCortado;
+
+    public string mensajeCompleto;
+
     GameObject jugador;
 
     public SignalReceptor elRadio;
@@ -41,10 +45,10 @@ public class RadioSignal : MonoBehaviour {
             audioSource.volume = volumen;
             if (distancia < radioInterior)
             {
-                elRadio.actualizarFrecuencia(expectedFrequency, sonidoAntena);
+                elRadio.actualizarFrecuencia(expectedFrequency, sonidoAntena, mensajeCompleto);
             }
             else {
-                elRadio.actualizarFrecuencia(0, null);
+                elRadio.actualizarFrecuencia(0, null, mensajeCortado);
             }
         }
 	}
@@ -69,6 +73,7 @@ public class RadioSignal : MonoBehaviour {
         {
             inArea = false;
             jugador = null;
+            elRadio.actualizarFrecuencia(0, null, "");
             audioSource.Stop();
         }
     }
