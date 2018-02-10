@@ -138,9 +138,8 @@ public class PlayerManager : MonoBehaviour
         //Debug.Log("tag radio es " + collision.gameObject.tag);
         if (collision.gameObject.tag == "Radio" && Input.GetKey("q"))
         {
-            Debug.Log("il radio");
-            canRadio = true;
-            collision.gameObject.SetActive(false);
+            interfaz.cambiarRadio();
+            collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             playAttentionSound = true;
         }
 

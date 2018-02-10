@@ -21,7 +21,7 @@ public class RoomDetectorContoller : MonoBehaviour
     public DoorEntranceSide entranceSide;
 
     // Indica si el destino de la puerta es caliente o le va a dar frio al personaje
-    public bool destinationIsWarm;
+    public bool destinationIsWarm = false;
 
 
 

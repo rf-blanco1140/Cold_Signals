@@ -17,6 +17,8 @@ public class UIManager : MonoBehaviour
     public GameObject inventario;
 
     private GameObject raciones;
+    
+    bool canRadio = false;
 
     //-------------------------------------------------------------------
     // Metodos
@@ -40,8 +42,16 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void toggleRadio()
     {
-        radio.SetActive(!radio.activeInHierarchy);
-        barras.SetActive(!barras.activeInHierarchy);
+        if (canRadio)
+        {
+            radio.SetActive(!radio.activeInHierarchy);
+            barras.SetActive(!barras.activeInHierarchy);
+        }
+    }
+
+    public void cambiarRadio()
+    {
+        canRadio = true;
     }
 
     /// <summary>
