@@ -71,10 +71,21 @@ public class GameManager : MonoBehaviour
     {
         reloj = duracionRealDia;
         StartCoroutine(pasoDelTiempo());
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        // Inicializa la luz que funciona como el sol en el Juego buscandola por Tag
+        GameObject solGameObject = GameObject.FindWithTag("Sol");
+        sol = solGameObject.GetComponent<Light>();
+        //Iniciliza la pantalla de Game Over buscandola por nombre
+        gameOverScreen = GameObject.Find("GameOverScreen");
+        // Inicializa la referencial al player buscando por Tag
+        player = GameObject.FindWithTag("Player");
+        // Inicializa la referencia a la barra de temperatura buscando el objeto que tiene el script de esta barra
+        coldBarReference = FindObjectOfType<ColdBar>();
+        // Inicializa la referencia a la barra de hambre buscando el objeto que tiene el script de esta barra
+        hungerBarRefrence = FindObjectOfType<HungerBar>();
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
         //Debug.Log(reloj);
 	}

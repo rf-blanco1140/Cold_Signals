@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
 
     public GameObject barras;
 
-    public GameObject inventario;
+    private GameObject inventario;
 
     private GameObject raciones;
     

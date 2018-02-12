@@ -28,13 +28,13 @@ public class PlayerManager : MonoBehaviour
     private Rigidbody2D playerRigidbody;
 
     // Referencia a la barra de hambre en la escena
-    public HungerBar hungerBarReference;
+    private HungerBar hungerBarReference;
 
     // Referencia a la barra de frio en la escena
-    public ColdBar coldBarReference;
+    private ColdBar coldBarReference;
 
     // Referencia a la radio en la escena
-    public UIManager interfaz;
+    private UIManager interfaz;
 
     // Indica si el jugador puede utilizar la radio o no
     public bool canRadio;
@@ -50,6 +50,8 @@ public class PlayerManager : MonoBehaviour
     // referencia al Sprite renderer del jugador
     private SpriteRenderer playerSpriteRenderer;
 
+    // Referencia al Game Manager
+    private GameManager gameManagerReference;
 
 
     //-------------------------------------------------------------------
@@ -59,14 +61,16 @@ public class PlayerManager : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        gameManagerReference = GameManager.instance;
         playerRigidbody = this.GetComponent<Rigidbody2D>();
         canMove = true;
-        //canRadio = true;
         playAttentionSound = false;
-
         playerAnimator = GetComponent<Animator>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
         canRadio = true;
+        hungerBarReference = gameManagerReference.hungerBarRefrence;
+        coldBarReference = gameManagerReference.coldBarReference;
+        interfaz = FindObjectOfType<UIManager>();
     }
 
     private void Update()
@@ -95,8 +99,6 @@ public class PlayerManager : MonoBehaviour
         {
             GameManager.instance.gameOver();
         }
-
-        
     }
 
     public void WaitForRadio()
@@ -233,7 +235,6 @@ public class PlayerManager : MonoBehaviour
                 if (isRunning)
                 {
                     hungerBarReference.selectHungerLevel(3);
-
                 }
                 else
                 {
@@ -255,7 +256,6 @@ public class PlayerManager : MonoBehaviour
                 {
                     coldBarReference.selectValorFrio(1);
                     hungerBarReference.selectHungerLevel(3);
-
                 }
                 else
                 {

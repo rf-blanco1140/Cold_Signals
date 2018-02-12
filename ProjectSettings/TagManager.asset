@@ -4,12 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - InForest
-  - OutForest
   - Forest
   - RoomDetector
   - Item
   - Radio
+  - Sol
+  - GameManager
+  - UI
   layers:
   - Default
   - TransparentFX
