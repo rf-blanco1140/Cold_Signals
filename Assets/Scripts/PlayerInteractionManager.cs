@@ -39,7 +39,8 @@ public class PlayerInteractionManager : MonoBehaviour
     // Icono que aparece cuando el personaje puede interactuar con algo en sus cercanias
     public GameObject interactIcon;
 
-
+    // Referencial para el objeto para la interacción con el cuadro de textos
+    private AnimacionTexto textosManager;
 
     //-------------------------------------------------------------------
     // Metodos
@@ -49,7 +50,8 @@ public class PlayerInteractionManager : MonoBehaviour
     {
         playerInverntoryControlerReference = GetComponent<PlayerInventoryController>();
         pm = FindObjectOfType<PlayerManager>();
-        fadeController = FindObjectOfType<FadeController>();    
+        fadeController = FindObjectOfType<FadeController>();
+        textosManager = FindObjectOfType<AnimacionTexto>();
     }
 
     void Update()
