@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 60937562667874174}
   m_Layer: 0
   m_Name: mina
-  m_TagString: Untagged
+  m_TagString: Mina
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,7 +53,7 @@ Transform:
   m_GameObject: {fileID: 1080362747596178}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 33.2, y: 18.8, z: 6.4943986}
-  m_LocalScale: {x: 1.845667, y: 1.8456664, z: 1.8456664}
+  m_LocalScale: {x: 1.84567, y: 1.84567, z: 1.84567}
   m_Children:
   - {fileID: 4398229669098398}
   m_Father: {fileID: 0}
@@ -81,7 +81,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
         sol = solGameObject.GetComponent<Light>();
         //Iniciliza la pantalla de Game Over buscandola por nombre
         gameOverScreen = GameObject.Find("GameOverScreen");
+        gameOverScreen.SetActive(false);
         // Inicializa la referencial al player buscando por Tag
         player = GameObject.FindWithTag("Player");
         // Inicializa la referencia a la barra de temperatura buscando el objeto que tiene el script de esta barra
