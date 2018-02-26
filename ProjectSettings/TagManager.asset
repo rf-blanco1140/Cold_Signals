@@ -12,6 +12,8 @@ TagManager:
   - GameManager
   - UI
   - Mina
+  - Entrada
+  - Salida
   layers:
   - Default
   - TransparentFX
