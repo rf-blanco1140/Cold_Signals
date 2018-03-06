@@ -56,6 +56,11 @@ public class EntradaAreaConReja : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Metodo que cambia las variables para saber que esta fuera de la reja
+    /// Adicionalmente activa y descativa los collides correspondientes para que
+    /// el jugador parezaca dentro o fuera de la reja
+    /// </summary>
     public void jugadorEntroSalio()
     {
         if(estaAdentro == false)
@@ -90,6 +95,9 @@ public class EntradaAreaConReja : MonoBehaviour
         this.transform.gameObject.SetActive(false);
     }
 
+    /// <summary>
+    /// Cambia el layer de las rejas para que parezca que el personaje esta fuera de la reja
+    /// </summary>
     public void layerFueraDeReja()
     {
         for(int i =0; i<ladoInfIzq.transform.childCount; i++)
@@ -111,6 +119,9 @@ public class EntradaAreaConReja : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Cambia el layer de las rejas para que parezca que el personaje esta dentro de la reja
+    /// </summary>
     public void layerDentroReja()
     {
         for (int i = 0; i < ladoInfIzq.transform.childCount; i++)
