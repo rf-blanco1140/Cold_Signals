@@ -8,22 +8,31 @@ public class EntradaAreaConReja : MonoBehaviour
     // Variables
     //-------------------------------------------------------------------
 
+    // Indica si esta dentro de la reja
     public bool estaAdentro;
 
+    // Indica si el script se esta usando para dentro o para afuera de la reja
     public bool esDentroDeLaReja;
 
+    // Objeto que contiene el comportamiento de renderizado y colliders de la reja opuesto al de este objeto
     public GameObject pairEntrance;
 
+    // Los colliders usados para el comportamiento actual de la reja
     public GameObject thisRejaColliders;
 
+    // Objeto que contiene todos los sprites del lado derecho de la reja
     private GameObject ladoDer;
 
+    // Objeto que contiene todos los sprites del lado izquierdo de la reja
     private GameObject ladoIzq;
 
+    // Objeto que contiene todos los sprites del lado superior de la reja
     private GameObject ladoSup;
 
+    // Objeto que contiene todos los sprites del lado inferior izquierdo de la reja
     private GameObject ladoInfIzq;
 
+    // Objeto que contiene todos los sprites del lado inferior derecho de la reja
     private GameObject ladoInfDer;
 
 
