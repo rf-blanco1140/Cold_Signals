@@ -258,7 +258,7 @@ Animator:
   m_GameObject: {fileID: 1688197702610376}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7e3c6d251c55f8b4985e81bf99aeefb3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 562716c682a5f4a55a868d68005953b0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -299,9 +299,6 @@ MonoBehaviour:
   playerRunSpeed: 100
   isRunning: 0
   canMove: 1
-  hungerBarReference: {fileID: 0}
-  coldBarReference: {fileID: 0}
-  interfaz: {fileID: 0}
   canRadio: 0
 --- !u!114 &114695785728057772
 MonoBehaviour:

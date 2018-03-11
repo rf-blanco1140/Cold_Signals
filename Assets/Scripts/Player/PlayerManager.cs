@@ -123,11 +123,11 @@ public class PlayerManager : MonoBehaviour
         if (canMove)
             moveCharacter(horizontalMove, verticalMove);
 
-        if (horizontalMove != 0 || verticalMove != 0)
+        if ((horizontalMove != 0 || verticalMove != 0) && !playerAnimator.GetBool("caminando"))
         {
             playerAnimator.SetBool("caminando", true);
         }
-        else
+        if ((horizontalMove == 0 && verticalMove == 0) && playerAnimator.GetBool("caminando"))
         {
             playerAnimator.SetBool("caminando", false);
             playerAnimator.SetFloat("vertical", 0);
