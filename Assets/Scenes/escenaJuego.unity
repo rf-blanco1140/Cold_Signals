@@ -4288,6 +4288,7 @@ GameObject:
   - component: {fileID: 137524141}
   - component: {fileID: 137524143}
   - component: {fileID: 137524142}
+  - component: {fileID: 137524144}
   m_Layer: 5
   m_Name: PruebaRenderArbolesUnderPlayer (52)
   m_TagString: Untagged
@@ -4306,7 +4307,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1595807002}
-  m_RootOrder: 56
+  m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4352,6 +4353,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.897461, y: 1.680481}
   m_EdgeRadius: 0
+--- !u!60 &137524144
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 137524140}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -17.313675, y: 69.68614}
+      - {x: 10.360016, y: 79.116135}
+      - {x: 16.53698, y: 67.129135}
+      - {x: 27.527634, y: 66.58092}
+      - {x: 29.12754, y: 74.92113}
+      - {x: -17.057465, y: 104.001816}
+      - {x: -38.122528, y: 36.976547}
+      - {x: -27.333862, y: -0.06965637}
+      - {x: -9.676605, y: -17.345657}
+      - {x: 1.0927124, y: -17.598099}
+      - {x: 41.472008, y: 11.922531}
+      - {x: 0.9510565, y: 0.30901712}
 --- !u!1001 &138137339
 Prefab:
   m_ObjectHideFlags: 0
@@ -5508,80 +5545,6 @@ Transform:
   m_Father: {fileID: 479220472}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &243763968
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 243763969}
-  - component: {fileID: 243763971}
-  - component: {fileID: 243763970}
-  m_Layer: 5
-  m_Name: PruebaRenderArbolesUnderPlayer (58)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &243763969
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 243763968}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1595807002}
-  m_RootOrder: 62
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -198, y: 441}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &243763970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 243763968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e0de57781e4ad34296d24bd52339784, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isOverPlayer: 0
-  otherRenderizerDetector: {fileID: 1472514058}
-  padreDeColliders: {fileID: 0}
---- !u!61 &243763971
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 243763968}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.48406982, y: 1.4078674}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 10.897461, y: 1.680481}
-  m_EdgeRadius: 0
 --- !u!1 &254065660
 GameObject:
   m_ObjectHideFlags: 0
@@ -6669,80 +6632,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 292444923}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &308736702
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 308736703}
-  - component: {fileID: 308736705}
-  - component: {fileID: 308736704}
-  m_Layer: 5
-  m_Name: PruebaRenderArbolesUnderPlayer (60)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &308736703
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 308736702}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1595807002}
-  m_RootOrder: 64
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -313.1, y: 687.2}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &308736704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 308736702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e0de57781e4ad34296d24bd52339784, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isOverPlayer: 0
-  otherRenderizerDetector: {fileID: 1472514058}
-  padreDeColliders: {fileID: 0}
---- !u!61 &308736705
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 308736702}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.48406982, y: 1.4078674}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 10.897461, y: 1.680481}
-  m_EdgeRadius: 0
 --- !u!1 &312146406
 GameObject:
   m_ObjectHideFlags: 0
@@ -7334,7 +7223,7 @@ GameObject:
   - component: {fileID: 352463770}
   - component: {fileID: 352463769}
   m_Layer: 5
-  m_Name: PruebaRenderArbolesUnderPlayer (35)
+  m_Name: BoxUnderPlayer (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7384,7 +7273,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.48406982, y: 1.4078674}
+  m_Offset: {x: -0.6716461, y: 0.5584717}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -7395,7 +7284,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.897461, y: 1.680481}
+  m_Size: {x: 68.0455, y: 3.3792725}
   m_EdgeRadius: 0
 --- !u!1 &354202850
 GameObject:
@@ -8513,7 +8402,7 @@ GameObject:
   - component: {fileID: 411529268}
   - component: {fileID: 411529267}
   m_Layer: 5
-  m_Name: PruebaRenderArbolesUnderPlayer (37)
+  m_Name: BoxUnderPlayer (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8534,7 +8423,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 512.8, y: 349.1}
+  m_AnchoredPosition: {x: 503.61, y: 344.65}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &411529267
@@ -8563,7 +8452,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.48406982, y: 1.4078674}
+  m_Offset: {x: -1.7416077, y: 3.7302856}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -8574,7 +8463,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.897461, y: 1.680481}
+  m_Size: {x: 15.348816, y: 6.3253174}
   m_EdgeRadius: 0
 --- !u!1 &415885198
 GameObject:
@@ -8839,7 +8728,7 @@ GameObject:
   - component: {fileID: 423556355}
   - component: {fileID: 423556354}
   m_Layer: 5
-  m_Name: PruebaRenderArbolesUnderPlayer (43)
+  m_Name: BoxUnderPlayer (43)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8889,7 +8778,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.48406982, y: 1.4078674}
+  m_Offset: {x: 2.1200256, y: -1.0461426}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -8900,7 +8789,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.897461, y: 1.680481}
+  m_Size: {x: 90.656555, y: 19.267822}
   m_EdgeRadius: 0
 --- !u!1 &435664521
 GameObject:
@@ -8996,6 +8885,7 @@ GameObject:
   - component: {fileID: 436724802}
   - component: {fileID: 436724804}
   - component: {fileID: 436724803}
+  - component: {fileID: 436724805}
   m_Layer: 5
   m_Name: PruebaRenderArbolesUnderPlayer (54)
   m_TagString: Untagged
@@ -9014,7 +8904,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1595807002}
-  m_RootOrder: 58
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9060,6 +8950,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.897461, y: 1.680481}
   m_EdgeRadius: 0
+--- !u!60 &436724805
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 436724801}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1}
+      - {x: -36.640594, y: 27.526993}
+      - {x: -43.46756, y: 19.26094}
+      - {x: -16.130371, y: -9.934006}
+      - {x: 22.748505, y: -10.535629}
+      - {x: 26.019745, y: -0.29264832}
+      - {x: 0.9510565, y: 0.30901712}
 --- !u!1 &436806751
 GameObject:
   m_ObjectHideFlags: 0
@@ -10621,6 +10542,7 @@ GameObject:
   - component: {fileID: 545948657}
   - component: {fileID: 545948659}
   - component: {fileID: 545948658}
+  - component: {fileID: 545948660}
   m_Layer: 5
   m_Name: PruebaRenderArbolesUnderPlayer (41)
   m_TagString: Untagged
@@ -10685,6 +10607,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.897461, y: 1.680481}
   m_EdgeRadius: 0
+--- !u!60 &545948660
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 545948656}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1}
+      - {x: -0.95105654, y: 0.30901697}
+      - {x: -107.23224, y: -13.434753}
+      - {x: -85.30121, y: -35.185547}
+      - {x: -62.313904, y: -32.222717}
+      - {x: -10.473694, y: -11.259094}
+      - {x: 6.5740356, y: -8.9938965}
+      - {x: 88.18756, y: -7.784424}
+      - {x: 115.2287, y: 22.100708}
 --- !u!1 &547733487
 GameObject:
   m_ObjectHideFlags: 0
@@ -12363,6 +12318,7 @@ GameObject:
   - component: {fileID: 678077896}
   - component: {fileID: 678077898}
   - component: {fileID: 678077897}
+  - component: {fileID: 678077899}
   m_Layer: 5
   m_Name: PruebaRenderArbolesUnderPlayer (55)
   m_TagString: Untagged
@@ -12381,7 +12337,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1595807002}
-  m_RootOrder: 59
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12427,6 +12383,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.897461, y: 1.680481}
   m_EdgeRadius: 0
+--- !u!60 &678077899
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 678077895}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -38.776108, y: 17.461563}
+      - {x: -26.923721, y: 1.4979401}
+      - {x: 4.5335846, y: -13.520981}
+      - {x: 16.580688, y: -13.813156}
+      - {x: 30.581848, y: 17.136368}
 --- !u!1 &681136619
 GameObject:
   m_ObjectHideFlags: 0
@@ -15466,6 +15451,7 @@ GameObject:
   - component: {fileID: 953038960}
   - component: {fileID: 953038962}
   - component: {fileID: 953038961}
+  - component: {fileID: 953038963}
   m_Layer: 5
   m_Name: PruebaRenderArbolesUnderPlayer (38)
   m_TagString: Untagged
@@ -15530,6 +15516,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.897461, y: 1.680481}
   m_EdgeRadius: 0
+--- !u!60 &953038963
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 953038959}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 16.905762, y: 12.157959}
+      - {x: -0.10760498, y: 16.604431}
+      - {x: -39.049927, y: 11.436951}
+      - {x: -19.618958, y: -5.545349}
+      - {x: -3.0629883, y: -5.4365234}
+      - {x: 0.58778536, y: -0.80901694}
+      - {x: 3.722229, y: 7.9332275}
+      - {x: 13.628235, y: 6.8948364}
+      - {x: 8.166687, y: -17.752258}
+      - {x: 28.823853, y: -16.802063}
 --- !u!1 &953113705
 GameObject:
   m_ObjectHideFlags: 0
@@ -16110,7 +16130,7 @@ GameObject:
   - component: {fileID: 1011176115}
   - component: {fileID: 1011176114}
   m_Layer: 5
-  m_Name: PruebaRenderArbolesUnderPlayer (36)
+  m_Name: BoxUnderPlayer (36)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16160,7 +16180,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.48406982, y: 1.4078674}
+  m_Offset: {x: 4.336235, y: -2.2975159}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -16171,7 +16191,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.897461, y: 1.680481}
+  m_Size: {x: 66.57881, y: 9.091248}
   m_EdgeRadius: 0
 --- !u!1 &1016817631
 GameObject:
@@ -18700,7 +18720,7 @@ GameObject:
   - component: {fileID: 1196620873}
   - component: {fileID: 1196620872}
   m_Layer: 5
-  m_Name: PruebaRenderArbolesUnderPlayer (46)
+  m_Name: BoxUnderPlayer (46)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18717,7 +18737,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1595807002}
-  m_RootOrder: 50
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -18750,7 +18770,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.48406982, y: 1.4078674}
+  m_Offset: {x: 3.697174, y: 1.5572205}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -18761,7 +18781,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.897461, y: 1.680481}
+  m_Size: {x: 17.32367, y: 7.060852}
   m_EdgeRadius: 0
 --- !u!1 &1201329126
 GameObject:
@@ -19508,6 +19528,7 @@ GameObject:
   - component: {fileID: 1230932654}
   - component: {fileID: 1230932656}
   - component: {fileID: 1230932655}
+  - component: {fileID: 1230932657}
   m_Layer: 5
   m_Name: PruebaRenderArbolesUnderPlayer (42)
   m_TagString: Untagged
@@ -19572,6 +19593,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.897461, y: 1.680481}
   m_EdgeRadius: 0
+--- !u!60 &1230932657
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1230932653}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1}
+      - {x: -48.30847, y: -32.464355}
+      - {x: -31.886292, y: -48.98584}
+      - {x: -17.267883, y: -48.514954}
+      - {x: -4.5994873, y: -32.47528}
+      - {x: 10.556946, y: -2.8323364}
+      - {x: 52.073914, y: -0.22015381}
+      - {x: 56.153625, y: 4.3980713}
 --- !u!1 &1232587041
 GameObject:
   m_ObjectHideFlags: 0
@@ -19848,6 +19901,7 @@ GameObject:
   - component: {fileID: 1245627112}
   - component: {fileID: 1245627114}
   - component: {fileID: 1245627113}
+  - component: {fileID: 1245627115}
   m_Layer: 5
   m_Name: PruebaRenderArbolesUnderPlayer (40)
   m_TagString: Untagged
@@ -19912,6 +19966,57 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.897461, y: 1.680481}
   m_EdgeRadius: 0
+--- !u!60 &1245627115
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1245627111}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -23.675232, y: 31.742462}
+      - {x: -106.832886, y: 69.19974}
+      - {x: -153.51605, y: 173.20248}
+      - {x: -268.59393, y: 201.34567}
+      - {x: -677.8921, y: 264.17905}
+      - {x: -819.32715, y: 321.46298}
+      - {x: -1033.604, y: 322.89975}
+      - {x: -1090.0167, y: 278.56296}
+      - {x: -1068.2007, y: 267.35617}
+      - {x: -757.2213, y: 221.42172}
+      - {x: -724.4324, y: 222.51938}
+      - {x: -708.33575, y: 233.09116}
+      - {x: -666.1664, y: 220.91037}
+      - {x: -736.1159, y: 84.50748}
+      - {x: -922.20654, y: 39.979218}
+      - {x: -918.88654, y: 29.615265}
+      - {x: -783.6148, y: 29.675201}
+      - {x: -741.3423, y: 22.136383}
+      - {x: -563.8937, y: 70.70499}
+      - {x: -482.64288, y: 188.8176}
+      - {x: -250.7587, y: 165.38803}
+      - {x: -167.58154, y: 117.509125}
+      - {x: -136.9956, y: 21.864105}
+      - {x: -119.69617, y: 4.0903625}
+      - {x: -86.63153, y: -5.93277}
+      - {x: 49.15857, y: -6.2359314}
+      - {x: 63.50537, y: 25.048553}
 --- !u!1 &1248266193
 GameObject:
   m_ObjectHideFlags: 0
@@ -20601,6 +20706,7 @@ GameObject:
   - component: {fileID: 1286968609}
   - component: {fileID: 1286968611}
   - component: {fileID: 1286968610}
+  - component: {fileID: 1286968612}
   m_Layer: 5
   m_Name: PruebaRenderArbolesUnderPlayer (47)
   m_TagString: Untagged
@@ -20619,7 +20725,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1595807002}
-  m_RootOrder: 51
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20665,6 +20771,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.897461, y: 1.680481}
   m_EdgeRadius: 0
+--- !u!60 &1286968612
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1286968608}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1}
+      - {x: -0.95105654, y: 0.30901697}
+      - {x: -96.74353, y: 6.8324585}
+      - {x: -136.98303, y: -80.76178}
+      - {x: -127.99603, y: -77.95697}
+      - {x: -119.53381, y: -67.00787}
+      - {x: -69.89722, y: -24.980408}
+      - {x: 72.00726, y: -20.12677}
+      - {x: 73.3667, y: -55.02826}
+      - {x: 90.19708, y: -54.677673}
+      - {x: 69.31879, y: 4.2767944}
+      - {x: 0.9510565, y: 0.30901712}
 --- !u!1 &1290593422
 GameObject:
   m_ObjectHideFlags: 0
@@ -21813,6 +21955,7 @@ GameObject:
   - component: {fileID: 1351318765}
   - component: {fileID: 1351318767}
   - component: {fileID: 1351318766}
+  - component: {fileID: 1351318768}
   m_Layer: 5
   m_Name: PruebaRenderArbolesUnderPlayer (50)
   m_TagString: Untagged
@@ -21831,7 +21974,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1595807002}
-  m_RootOrder: 54
+  m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21877,6 +22020,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.897461, y: 1.680481}
   m_EdgeRadius: 0
+--- !u!60 &1351318768
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1351318764}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1}
+      - {x: -93.33821, y: 29.27362}
+      - {x: -95.55603, y: 25.585754}
+      - {x: -82.48956, y: 12.407166}
+      - {x: -65.588974, y: -3.737671}
+      - {x: -42.86949, y: -18.287659}
+      - {x: 65.84143, y: -27.776062}
+      - {x: 102.62982, y: -27.276672}
+      - {x: 104.294464, y: -19.952332}
+      - {x: 2.2827454, y: 1.80719}
 --- !u!4 &1359700700 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4709156069415286, guid: efa60769551119844af1bafede6d64b4,
@@ -23277,80 +23454,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1446885687}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1452799323
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1452799324}
-  - component: {fileID: 1452799326}
-  - component: {fileID: 1452799325}
-  m_Layer: 5
-  m_Name: PruebaRenderArbolesUnderPlayer (45)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1452799324
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1452799323}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1595807002}
-  m_RootOrder: 49
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 601.4, y: 669.4}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1452799325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1452799323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e0de57781e4ad34296d24bd52339784, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isOverPlayer: 0
-  otherRenderizerDetector: {fileID: 1472514058}
-  padreDeColliders: {fileID: 0}
---- !u!61 &1452799326
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1452799323}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.48406982, y: 1.4078674}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 10.897461, y: 1.680481}
-  m_EdgeRadius: 0
 --- !u!1 &1464448620
 GameObject:
   m_ObjectHideFlags: 0
@@ -24381,6 +24484,7 @@ GameObject:
   - component: {fileID: 1508315016}
   - component: {fileID: 1508315018}
   - component: {fileID: 1508315017}
+  - component: {fileID: 1508315019}
   m_Layer: 5
   m_Name: PruebaRenderArbolesUnderPlayer (56)
   m_TagString: Untagged
@@ -24399,7 +24503,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1595807002}
-  m_RootOrder: 60
+  m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -24445,6 +24549,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.897461, y: 1.680481}
   m_EdgeRadius: 0
+--- !u!60 &1508315019
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1508315015}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1}
+      - {x: -13.585663, y: -0.5935364}
+      - {x: -13.222412, y: -20.36264}
+      - {x: -3.322937, y: -17.956085}
+      - {x: 12.2821045, y: 0.8103943}
+      - {x: 0.9510565, y: 0.30901712}
 --- !u!1 &1510801032
 GameObject:
   m_ObjectHideFlags: 0
@@ -25099,7 +25233,7 @@ GameObject:
   - component: {fileID: 1548117019}
   - component: {fileID: 1548117018}
   m_Layer: 5
-  m_Name: PruebaRenderArbolesUnderPlayer (34)
+  m_Name: BoxUnderPlayer (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25149,7 +25283,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.48406982, y: 1.4078674}
+  m_Offset: {x: -1.657608, y: -1.536499}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -25160,7 +25294,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.897461, y: 1.680481}
+  m_Size: {x: 74.337036, y: 7.569214}
   m_EdgeRadius: 0
 --- !u!1 &1554872603
 GameObject:
@@ -25524,7 +25658,6 @@ RectTransform:
   - {fileID: 1230932654}
   - {fileID: 423556353}
   - {fileID: 2034398110}
-  - {fileID: 1452799324}
   - {fileID: 1196620871}
   - {fileID: 1286968609}
   - {fileID: 1690920547}
@@ -25532,14 +25665,11 @@ RectTransform:
   - {fileID: 1351318765}
   - {fileID: 1972087793}
   - {fileID: 137524141}
-  - {fileID: 1774768678}
   - {fileID: 436724802}
   - {fileID: 678077896}
   - {fileID: 1508315016}
   - {fileID: 2092032430}
-  - {fileID: 243763969}
-  - {fileID: 2144458146}
-  - {fileID: 308736703}
+  - {fileID: 1926013244}
   m_Father: {fileID: 1001408759}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26768,7 +26898,7 @@ GameObject:
   - component: {fileID: 1690920549}
   - component: {fileID: 1690920548}
   m_Layer: 5
-  m_Name: PruebaRenderArbolesUnderPlayer (48)
+  m_Name: BoxUnderPlayer (48)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26785,7 +26915,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1595807002}
-  m_RootOrder: 52
+  m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -26818,7 +26948,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.48406982, y: 1.4078674}
+  m_Offset: {x: -0.054779053, y: -6.041992}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -26829,7 +26959,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.897461, y: 1.680481}
+  m_Size: {x: 129.67535, y: 26.44519}
   m_EdgeRadius: 0
 --- !u!1 &1695380623
 GameObject:
@@ -27494,6 +27624,7 @@ GameObject:
   - component: {fileID: 1764068552}
   - component: {fileID: 1764068554}
   - component: {fileID: 1764068553}
+  - component: {fileID: 1764068555}
   m_Layer: 5
   m_Name: PruebaRenderArbolesUnderPlayer (32)
   m_TagString: Untagged
@@ -27558,6 +27689,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.897461, y: 1.680481}
   m_EdgeRadius: 0
+--- !u!60 &1764068555
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1764068551}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 62.194427, y: 21.270294}
+      - {x: 36.562897, y: 1.7840881}
+      - {x: 0, y: 1}
+      - {x: -56.630615, y: -4.12558}
+      - {x: -55.8732, y: -5.933441}
+      - {x: 38.82437, y: -5.933502}
+      - {x: 70.72482, y: 23.991058}
 --- !u!1 &1768086823
 GameObject:
   m_ObjectHideFlags: 0
@@ -27914,80 +28076,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1772624111}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1774768677
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1774768678}
-  - component: {fileID: 1774768680}
-  - component: {fileID: 1774768679}
-  m_Layer: 5
-  m_Name: PruebaRenderArbolesUnderPlayer (53)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1774768678
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1774768677}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1595807002}
-  m_RootOrder: 57
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -61.8, y: 172.5}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1774768679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1774768677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e0de57781e4ad34296d24bd52339784, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isOverPlayer: 0
-  otherRenderizerDetector: {fileID: 1472514058}
-  padreDeColliders: {fileID: 0}
---- !u!61 &1774768680
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1774768677}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.48406982, y: 1.4078674}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 10.897461, y: 1.680481}
-  m_EdgeRadius: 0
 --- !u!1 &1784231241
 GameObject:
   m_ObjectHideFlags: 0
@@ -30199,6 +30287,118 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1921486333}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1926013243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1926013244}
+  - component: {fileID: 1926013247}
+  - component: {fileID: 1926013246}
+  - component: {fileID: 1926013245}
+  m_Layer: 5
+  m_Name: PruebaRenderArbolesUnderPlayer (43)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1926013244
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926013243}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1595807002}
+  m_RootOrder: 60
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 612.6, y: 681.4}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!60 &1926013245
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926013243}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1}
+      - {x: -52.64685, y: -19.036133}
+      - {x: -47.995544, y: -38.785156}
+      - {x: -47.682617, y: -45.105957}
+      - {x: -31.886292, y: -48.98584}
+      - {x: -17.267883, y: -48.514954}
+      - {x: -4.5994873, y: -32.47528}
+      - {x: 5.392273, y: -13.161743}
+      - {x: 24.673828, y: -12.203735}
+      - {x: 32.215637, y: -7.404663}
+      - {x: 32.233032, y: -0.548584}
+      - {x: 52.073914, y: -0.22015381}
+      - {x: 56.153625, y: 4.3980713}
+--- !u!114 &1926013246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926013243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e0de57781e4ad34296d24bd52339784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOverPlayer: 0
+  otherRenderizerDetector: {fileID: 1472514058}
+  padreDeColliders: {fileID: 0}
+--- !u!61 &1926013247
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926013243}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.48406982, y: 1.4078674}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.897461, y: 1.680481}
+  m_EdgeRadius: 0
 --- !u!1 &1929285731
 GameObject:
   m_ObjectHideFlags: 0
@@ -31162,6 +31362,7 @@ GameObject:
   - component: {fileID: 1972087793}
   - component: {fileID: 1972087795}
   - component: {fileID: 1972087794}
+  - component: {fileID: 1972087796}
   m_Layer: 5
   m_Name: PruebaRenderArbolesUnderPlayer (51)
   m_TagString: Untagged
@@ -31180,7 +31381,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1595807002}
-  m_RootOrder: 55
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -31226,6 +31427,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.897461, y: 1.680481}
   m_EdgeRadius: 0
+--- !u!60 &1972087796
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1972087792}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1}
+      - {x: -81.38838, y: 28.715729}
+      - {x: -33.777237, y: -11.24411}
+      - {x: 43.197823, y: -12.548492}
+      - {x: 47.619194, y: -3.459198}
+      - {x: 0.9510565, y: 0.30901712}
 --- !u!1 &1973668309
 GameObject:
   m_ObjectHideFlags: 0
@@ -31404,6 +31635,7 @@ GameObject:
   - component: {fileID: 1982589120}
   - component: {fileID: 1982589122}
   - component: {fileID: 1982589121}
+  - component: {fileID: 1982589123}
   m_Layer: 5
   m_Name: PruebaRenderArbolesUnderPlayer (39)
   m_TagString: Untagged
@@ -31468,6 +31700,44 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.897461, y: 1.680481}
   m_EdgeRadius: 0
+--- !u!60 &1982589123
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1982589119}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -64.00177, y: 38.239655}
+      - {x: -92.124695, y: 37.56491}
+      - {x: -90.701416, y: 30.344574}
+      - {x: -67.52167, y: 29.004303}
+      - {x: -69.07922, y: 17.116547}
+      - {x: -45.13507, y: 16.068512}
+      - {x: -44.973083, y: 6.9509583}
+      - {x: -38.8573, y: 3.6249695}
+      - {x: -0.5877852, y: -0.80901706}
+      - {x: 10.355469, y: -17.276093}
+      - {x: 72.392456, y: -66.30411}
+      - {x: 90.03235, y: -70.29935}
+      - {x: 83.6344, y: -27.753143}
+      - {x: 12.884277, y: 13.974518}
 --- !u!1 &1996765960
 GameObject:
   m_ObjectHideFlags: 0
@@ -115946,6 +116216,7 @@ GameObject:
   - component: {fileID: 2034398110}
   - component: {fileID: 2034398112}
   - component: {fileID: 2034398111}
+  - component: {fileID: 2034398113}
   m_Layer: 5
   m_Name: PruebaRenderArbolesUnderPlayer (44)
   m_TagString: Untagged
@@ -116010,6 +116281,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.897461, y: 1.680481}
   m_EdgeRadius: 0
+--- !u!60 &2034398113
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2034398109}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1}
+      - {x: -30.535156, y: 24.942993}
+      - {x: -34.063293, y: 18.863281}
+      - {x: -7.581299, y: -8.230713}
+      - {x: 20.492065, y: -34.84973}
+      - {x: 29.989136, y: -33.35034}
+      - {x: 0.9510565, y: 0.30901712}
 --- !u!1 &2044467952
 GameObject:
   m_ObjectHideFlags: 0
@@ -117085,6 +117387,7 @@ GameObject:
   - component: {fileID: 2092032430}
   - component: {fileID: 2092032432}
   - component: {fileID: 2092032431}
+  - component: {fileID: 2092032433}
   m_Layer: 5
   m_Name: PruebaRenderArbolesUnderPlayer (57)
   m_TagString: Untagged
@@ -117103,7 +117406,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1595807002}
-  m_RootOrder: 61
+  m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -117149,6 +117452,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.897461, y: 1.680481}
   m_EdgeRadius: 0
+--- !u!60 &2092032433
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2092032429}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.3659363, y: 15.513306}
+      - {x: -0.95105654, y: 0.30901697}
+      - {x: -20.268372, y: -15.102173}
+      - {x: 0.7315674, y: -15.102173}
+      - {x: 14.880951, y: -2.128418}
+      - {x: 32.06613, y: 16.031494}
 --- !u!1 &2093643650
 GameObject:
   m_ObjectHideFlags: 0
@@ -117998,80 +118331,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2143028421}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2144458145
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 2144458146}
-  - component: {fileID: 2144458148}
-  - component: {fileID: 2144458147}
-  m_Layer: 5
-  m_Name: PruebaRenderArbolesUnderPlayer (59)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2144458146
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2144458145}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1595807002}
-  m_RootOrder: 63
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -180.6, y: 633.6}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2144458147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2144458145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e0de57781e4ad34296d24bd52339784, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isOverPlayer: 0
-  otherRenderizerDetector: {fileID: 1472514058}
-  padreDeColliders: {fileID: 0}
---- !u!61 &2144458148
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2144458145}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.48406982, y: 1.4078674}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 10.897461, y: 1.680481}
-  m_EdgeRadius: 0
 --- !u!1 &2145620313
 GameObject:
   m_ObjectHideFlags: 0
@@ -118082,6 +118341,7 @@ GameObject:
   - component: {fileID: 2145620314}
   - component: {fileID: 2145620316}
   - component: {fileID: 2145620315}
+  - component: {fileID: 2145620317}
   m_Layer: 5
   m_Name: PruebaRenderArbolesUnderPlayer (33)
   m_TagString: Untagged
@@ -118146,6 +118406,47 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.897461, y: 1.680481}
   m_EdgeRadius: 0
+--- !u!60 &2145620317
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2145620313}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 8.413193, y: 25.592422}
+      - {x: -94.70705, y: 79.34004}
+      - {x: -103.99654, y: 109.90907}
+      - {x: -113.812454, y: 110.206985}
+      - {x: -106.284836, y: 70.69594}
+      - {x: -93.25389, y: 33.966507}
+      - {x: -87.01027, y: 33.201553}
+      - {x: -80.91353, y: -0.2372284}
+      - {x: -62.544754, y: -16.262802}
+      - {x: 16.767014, y: -16.502853}
+      - {x: 63.43077, y: 19.714676}
+      - {x: 90.797165, y: 44.096756}
+      - {x: 116.752396, y: 71.74312}
+      - {x: 116.33739, y: 74.00374}
+      - {x: 122.04143, y: 79.564835}
+      - {x: 130.06956, y: 83.60988}
+      - {x: 121.03758, y: 87.25008}
 --- !u!1 &2147337506
 GameObject:
   m_ObjectHideFlags: 0
@@ -118156,6 +118457,7 @@ GameObject:
   - component: {fileID: 2147337507}
   - component: {fileID: 2147337509}
   - component: {fileID: 2147337508}
+  - component: {fileID: 2147337510}
   m_Layer: 5
   m_Name: PruebaRenderArbolesUnderPlayer (49)
   m_TagString: Untagged
@@ -118174,7 +118476,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1595807002}
-  m_RootOrder: 53
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -118220,3 +118522,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.897461, y: 1.680481}
   m_EdgeRadius: 0
+--- !u!60 &2147337510
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2147337506}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 26.600784, y: 22.124115}
+      - {x: -27.775436, y: 14.615387}
+      - {x: -9.853409, y: -6.5626526}
+      - {x: 2.924179, y: -17.845795}
+      - {x: 10.600632, y: -17.920563}
+      - {x: 15.897079, y: -4.9497375}
