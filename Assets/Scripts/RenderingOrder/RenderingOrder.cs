@@ -19,6 +19,7 @@ public class RenderingOrder : MonoBehaviour
     // Objeto que contiene los colliders que renderizan los arboles al contrario que el actual
     public GameObject otherRenderizerDetector;
 
+    public GameObject padreDeColliders;
 
     //-------------------------------------------------------------------
     // Metodos
@@ -28,6 +29,7 @@ public class RenderingOrder : MonoBehaviour
     void Start ()
     {
         treesRenderer = GameObject.Find("TilemapArbolBajo").GetComponent<TilemapRenderer>();
+        padreDeColliders = this.transform.parent.gameObject;
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,7 +45,7 @@ public class RenderingOrder : MonoBehaviour
     public void cambioColliderDeRenderizado()
     {
         otherRenderizerDetector.SetActive(true);
-        this.transform.gameObject.SetActive(false);
+        padreDeColliders.transform.gameObject.SetActive(false);//this.transform.gameObject.SetActive(false);
     }
 
     /// <summary>
@@ -52,12 +54,11 @@ public class RenderingOrder : MonoBehaviour
     /// <param name="collision"> Objeto con el que se va a comparar el tag para saber si se cambia el orden de renderizado </param>
     public void cambioOrdenRenderizadoArboles(Collider2D collision)
     {
-        if (collision.tag == "Palyer")
+        if (collision.tag == "Player")
         {
             if (isOverPlayer)
             {
                 treesRenderer.sortingOrder = 4;
-
             }
             else
             {
