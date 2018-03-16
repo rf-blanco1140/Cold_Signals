@@ -179,8 +179,16 @@ public class PlayerManager : MonoBehaviour
             Vector2 actualPosition = new Vector2(this.transform.position.x, this.transform.position.y);
             playerRigidbody.MovePosition(actualPosition + movementVector);
 
-        playerAnimator.SetFloat("vertical", vMove);
-        playerAnimator.SetFloat("horizontal", hMove);
+        if (hMove != 0 && vMove != 0)
+        {
+            playerAnimator.SetFloat("vertical", vMove);
+            playerAnimator.SetFloat("horizontal", 0);
+        }
+        else
+        {
+            playerAnimator.SetFloat("vertical", vMove);
+            playerAnimator.SetFloat("horizontal", hMove);
+        }
 
 
         cambiarNiveldeFrioHambre(hMove, vMove);
