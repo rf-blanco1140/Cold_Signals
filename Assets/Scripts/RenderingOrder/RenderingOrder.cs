@@ -29,7 +29,7 @@ public class RenderingOrder : MonoBehaviour
     void Start ()
     {
         
-        treesRenderer = FindObjectOfType<TilemapRenderer>();
+        treesRenderer = GameObject.Find("TilemapGeneral").GetComponent<TilemapRenderer>();
         padreDeColliders = this.transform.parent.gameObject;
 	}
 
