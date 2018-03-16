@@ -28,7 +28,8 @@ public class RenderingOrder : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        treesRenderer = GameObject.Find("TilemapArbolBajo").GetComponent<TilemapRenderer>();
+        
+        treesRenderer = FindObjectOfType<TilemapRenderer>();
         padreDeColliders = this.transform.parent.gameObject;
 	}
 
