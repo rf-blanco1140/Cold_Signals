@@ -12,7 +12,7 @@ public class RadioSignal : MonoBehaviour {
 
     bool closeEnough;
 
-    public AudioSource audioSource;
+    AudioSource audioSource;
 
     float diametroTransmision = 0;
 
@@ -33,6 +33,8 @@ public class RadioSignal : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+        audioSource = FindObjectOfType<AudioSource>();
+        elRadio = FindObjectOfType<SignalReceptor>();
         expectedFrequency = (int)(Random.Range(-limite, limite) * 100);
     }
 	
@@ -48,7 +50,7 @@ public class RadioSignal : MonoBehaviour {
                 elRadio.actualizarFrecuencia(expectedFrequency, sonidoAntena, mensajeCompleto);
             }
             else {
-                elRadio.actualizarFrecuencia(0, null, mensajeCortado);
+                elRadio.actualizarFrecuencia(0, sonidoCercania, mensajeCortado);
             }
         }
 	}

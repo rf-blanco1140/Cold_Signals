@@ -10,20 +10,24 @@ public class SignalReceptor : MonoBehaviour {
 
     AudioClip sonido;
 
+    AnimacionTexto texto;
+
     public AudioSource audioSource;
 
     bool reproduciendo = false;
 
     float limite = 0.97f;
 
-    float margen = 3f;
+    float margen = 5f;
 
     int expectedFrequency = 0;
 
     string mensaje = "";
 
     void Start () {
-        audioSource.volume = 1;
+        audioSource.volume = 5;
+        texto = FindObjectOfType<AnimacionTexto>();
+        texto.gameObject.SetActive(false);
     }
 
 
@@ -63,6 +67,8 @@ public class SignalReceptor : MonoBehaviour {
                 audioSource.Stop();
                 reproduciendo = true;
                 audioSource.clip = sonido;
+                texto.setMessage(mensaje);
+                texto.gameObject.SetActive(true);
                 audioSource.PlayOneShot(sonido);
             }
             else
@@ -72,6 +78,8 @@ public class SignalReceptor : MonoBehaviour {
         }
         else
         {
+            texto.setMessage("");
+            texto.gameObject.SetActive(false);
             if (audioSource.clip == null)
             {
                 audioSource.clip = estatica;

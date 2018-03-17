@@ -17,8 +17,11 @@ public class UIManager : MonoBehaviour
     private GameObject inventario;
 
     private GameObject raciones;
+
+    private GameObject textos;
     
-    bool canRadio = false;
+    //TODO: cuando pasemos del bunker inicial arreglar esto
+    bool canRadio = true;
 
     //-------------------------------------------------------------------
     // Metodos
@@ -30,6 +33,8 @@ public class UIManager : MonoBehaviour
         radio.SetActive(false);
         barras.SetActive(true);
         inventario = GameObject.Find("Inventario");
+        textos = GameObject.Find("TextoDialogos");
+        textos.SetActive(false);
         //Inicializa las raciones
         raciones = GameObject.Find("RacionesUI");
         if (raciones.GetComponentInChildren<Text>() == null) { Debug.Log("raciones nulas mi capitan texto"); }
@@ -46,6 +51,9 @@ public class UIManager : MonoBehaviour
         {
             radio.SetActive(!radio.activeInHierarchy);
             barras.SetActive(!barras.activeInHierarchy);
+            textos.SetActive(!textos.activeInHierarchy);
+            raciones.SetActive(!raciones.activeInHierarchy);
+            inventario.SetActive(!inventario.activeInHierarchy);
         }
     }
 

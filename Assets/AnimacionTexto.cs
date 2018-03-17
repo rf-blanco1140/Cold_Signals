@@ -17,6 +17,12 @@ public class AnimacionTexto : MonoBehaviour {
         message = objetoText.text;
         
     }
+
+    void Awake () {
+        objetoText = GetComponent<Text>();
+        message = objetoText.text;
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -25,7 +31,7 @@ public class AnimacionTexto : MonoBehaviour {
 
     void OnEnable()
     {
-        objetoText.text = "";
+        objetoText.text = message;
         StartCoroutine("Typing");
     }
 

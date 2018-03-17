@@ -34,7 +34,7 @@ public class PlayerManager : MonoBehaviour
     private ColdBar coldBarReference;
 
     // Referencia a la radio en la escena
-    private UIManager interfaz;
+    public UIManager interfaz;
 
     // Indica si el jugador puede utilizar la radio o no
     public bool canRadio;
@@ -70,7 +70,7 @@ public class PlayerManager : MonoBehaviour
         canRadio = true;
         hungerBarReference = gameManagerReference.hungerBarRefrence;
         coldBarReference = gameManagerReference.coldBarReference;
-        interfaz = FindObjectOfType<UIManager>();
+        interfaz = FindObjectOfType<UIManager>().GetComponent<UIManager>();
     }
 
     private void Update()
@@ -138,7 +138,7 @@ public class PlayerManager : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         //Debug.Log("tag radio es " + collision.gameObject.tag);
-        if (collision.gameObject.tag == "Radio" && Input.GetKey("q"))
+        if (!canRadio && collision.gameObject.tag == "Radio" && Input.GetKey("q"))
         {
             interfaz.cambiarRadio();
             collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
