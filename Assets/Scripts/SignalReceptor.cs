@@ -6,13 +6,9 @@ public class SignalReceptor : MonoBehaviour {
 
     public GameObject handle;
 
-    public AudioClip estatica;
-
-    AudioClip sonido;
-
     AnimacionTexto texto;
 
-    public AudioSource audioSource;
+    MusicManager musicManager;
 
     bool reproduciendo = false;
 
@@ -25,9 +21,10 @@ public class SignalReceptor : MonoBehaviour {
     string mensaje = "";
 
     void Start () {
-        audioSource.volume = 5;
+        musicManager = FindObjectOfType<MusicManager>();
         texto = FindObjectOfType<AnimacionTexto>();
         texto.gameObject.SetActive(false);
+        reproduciendo = false;
     }
 
 
@@ -62,44 +59,29 @@ public class SignalReceptor : MonoBehaviour {
     {
         if (Mathf.Abs(handle.transform.rotation.z*100 - expectedFrequency) <= margen)
         {
-            if (!reproduciendo)
+            if(!reproduciendo)
             {
-                audioSource.Stop();
-                reproduciendo = true;
-                audioSource.clip = sonido;
+                musicManager.reproducir();
                 texto.setMessage(mensaje);
                 texto.gameObject.SetActive(true);
-                audioSource.PlayOneShot(sonido);
-            }
-            else
-            {
-
+                reproduciendo = true;
             }
         }
         else
         {
-            texto.setMessage("");
-            texto.gameObject.SetActive(false);
-            if (audioSource.clip == null)
+            if(reproduciendo)
             {
-                audioSource.clip = estatica;
-                audioSource.PlayOneShot(estatica);
+                texto.setMessage("");
+                texto.gameObject.SetActive(false);
+                musicManager.entraEnArea();
+                reproduciendo = false;
             }
-            else if (audioSource.clip != estatica && audioSource.isPlaying)
-            {
-                audioSource.Stop();
-                audioSource.clip = estatica;
-                audioSource.PlayOneShot(estatica);
-            }
-
-            reproduciendo = false;
         }
     }
 
-    public void actualizarFrecuencia(int frec, AudioClip elSonido, string elMensaje)
+    public void actualizarFrecuencia(int frec, string elMensaje)
     {
         expectedFrequency = frec;
-        sonido = elSonido;
         mensaje = elMensaje;
     }
 

@@ -70,7 +70,7 @@ public class PlayerManager : MonoBehaviour
         canRadio = true;
         hungerBarReference = gameManagerReference.hungerBarRefrence;
         coldBarReference = gameManagerReference.coldBarReference;
-        interfaz = FindObjectOfType<UIManager>().GetComponent<UIManager>();
+        interfaz = FindObjectOfType<UIManager>();
     }
 
     private void Update()

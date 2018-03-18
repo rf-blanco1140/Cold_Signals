@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class RadioSignal : MonoBehaviour {
 
-    public AudioClip sonidoCercania;
-
-    public AudioClip sonidoAntena;
-
     bool inArea;
 
     bool closeEnough;
-
-    AudioSource audioSource;
 
     float diametroTransmision = 0;
 
@@ -26,16 +20,20 @@ public class RadioSignal : MonoBehaviour {
 
     public string mensajeCompleto;
 
+    public bool cumbion;
+
     GameObject jugador;
 
-    public SignalReceptor elRadio;
+    SignalReceptor elRadio;
+
+    MusicManager musicManager;
 
 	// Use this for initialization
 	void Start () {
 
-        audioSource = FindObjectOfType<AudioSource>();
         elRadio = FindObjectOfType<SignalReceptor>();
         expectedFrequency = (int)(Random.Range(-limite, limite) * 100);
+        musicManager = FindObjectOfType<MusicManager>();
     }
 	
 	// Update is called once per frame
@@ -44,13 +42,15 @@ public class RadioSignal : MonoBehaviour {
         {
             float distancia = Mathf.Abs((jugador.transform.position - this.transform.position).magnitude);
             float volumen = diametroTransmision / (distancia*10);
-            audioSource.volume = volumen;
+            musicManager.cambiarVolumen(volumen);
             if (distancia < radioInterior)
             {
-                elRadio.actualizarFrecuencia(expectedFrequency, sonidoAntena, mensajeCompleto);
+                musicManager.marcarRango(true, cumbion);
+                elRadio.actualizarFrecuencia(expectedFrequency, mensajeCompleto);
             }
             else {
-                elRadio.actualizarFrecuencia(0, sonidoCercania, mensajeCortado);
+                elRadio.actualizarFrecuencia(expectedFrequency, mensajeCortado);
+                musicManager.marcarRango(false, cumbion);
             }
         }
 	}
@@ -61,11 +61,11 @@ public class RadioSignal : MonoBehaviour {
         {
             inArea = true;
             jugador = other.gameObject;
+            musicManager.entraEnArea();
             if (diametroTransmision == 0)
             {
                 diametroTransmision = Mathf.Abs((jugador.transform.position - this.transform.position).magnitude);
             }
-            audioSource.PlayOneShot(sonidoCercania);
         }
     }
 
@@ -75,8 +75,8 @@ public class RadioSignal : MonoBehaviour {
         {
             inArea = false;
             jugador = null;
-            elRadio.actualizarFrecuencia(0, null, "");
-            audioSource.Stop();
+            musicManager.saleDeArea();
+            elRadio.actualizarFrecuencia(-100, "");
         }
     }
     
