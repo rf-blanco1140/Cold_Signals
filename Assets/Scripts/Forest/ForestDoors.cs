@@ -24,6 +24,10 @@ public class ForestDoors : MonoBehaviour
     void Start ()
     {
         forestInstance = EvilForest.instance;
+        if(pairEntrance.gameObject.name == "Salidas")
+        {
+            pairEntrance.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

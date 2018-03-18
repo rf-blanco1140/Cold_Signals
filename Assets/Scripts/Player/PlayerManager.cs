@@ -93,13 +93,13 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Mina")
         {
             GameManager.instance.gameOver();
         }
-    }
+    }*/
 
     public void WaitForRadio()
     {
