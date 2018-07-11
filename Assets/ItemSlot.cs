@@ -28,4 +28,9 @@ public class ItemSlot : MonoBehaviour
 
         objetcImage.sprite = itemSprite;
     }
+
+    public void obscurecerItem()
+    {
+        objetcImage.color = Color.gray;
+    }
 }

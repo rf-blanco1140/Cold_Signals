@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInteractionManager : MonoBehaviour
 {
@@ -146,11 +147,12 @@ public class PlayerInteractionManager : MonoBehaviour
         // Interaccion con el boton de interactuar y un objeto interactuable
         if (canInteract && Input.GetButton("Fire1"))
         {
-            if(currentItem != null)
+            
+            if (currentItem != null)
             {
+                
                 if (currentItem.type == InteractableObjectType.Food)
                 {
-                    //Debug.Log("quiere comer");
                     playerInverntoryControlerReference.AddFoodRation();
                     Destroy(currentItem.gameObject);
                 }
@@ -160,7 +162,6 @@ public class PlayerInteractionManager : MonoBehaviour
                 }
                 else if (currentItem.type == InteractableObjectType.LockedDoor)
                 {
-                    Debug.Log("WTF");
                     if (CheckDoor())
                     {
                         currentRoomDetector = currentItem.GetComponent<RoomDetectorContoller>();
@@ -177,10 +178,14 @@ public class PlayerInteractionManager : MonoBehaviour
             }
             else if (doorwayLockDetector != null)
             {
-                if(CheckDoorway())
+                int posInventory = CheckDoorway();
+                if (CheckDoorway() != -1)
                 {
                     canInteract = false;
                     doorwayLockDetector.DoEvents();
+
+                    List<PickableItemInfo> currentInventory = playerInverntoryControlerReference.GetInventory();
+                    //currentInventory[posInventory].
                 }
             else
                 canInteract = false;
@@ -239,24 +244,33 @@ public class PlayerInteractionManager : MonoBehaviour
     /// Revisa si tiene el item para abrir la puerta
     /// </summary>
     /// <returns> Retorna un bool indicando si se pudo abrir o no la puerta </returns>
-    bool CheckDoorway()
+    int CheckDoorway()
     {
         string keyName = doorwayLockDetector.keyName;
         List<PickableItemInfo> currentInventory = playerInverntoryControlerReference.GetInventory();
 
-        bool unlocked = false;
+        int unlocked = -1;
 
-        for (int i = 0; i < currentInventory.Count && !unlocked; i++)
+        for (int i = 0; i < currentInventory.Count && unlocked==(-1) ; i++)
         {
-
             if (keyName == currentInventory[i].name)
             {
-                unlocked = true;
+                unlocked = i;
+                obscureUsedItem(i+1);
             }
-
         }
 
         return unlocked;
+    }
+
+    public void obscureUsedItem(int itemCode)
+    {
+        GameObject newUsedItem = GameObject.Find("inside"+itemCode);
+
+        if(newUsedItem != null)
+        {
+            newUsedItem.GetComponent<Image>().color = new Color32(84, 84, 84, 100);
+        }
     }
 
     /// <summary>

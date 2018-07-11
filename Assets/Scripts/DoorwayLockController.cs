@@ -25,6 +25,7 @@ public class DoorwayLockController : MonoBehaviour
     public void DoEvents()
     {
         openEvents.Invoke();
+
     }
 
     /// <summary>
