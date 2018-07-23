@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4311029896421850}
   - component: {fileID: 212827301058243268}
   - component: {fileID: 60937562667874174}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mina
   m_TagString: Mina
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4398229669098398}
   - component: {fileID: 212214350470182498}
   - component: {fileID: 95854965832627334}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: brillo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
