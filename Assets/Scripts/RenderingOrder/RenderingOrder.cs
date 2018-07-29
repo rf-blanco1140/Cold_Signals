@@ -63,7 +63,7 @@ public class RenderingOrder : MonoBehaviour
             }
             else
             {
-                treesRenderer.sortingOrder = 2;
+                treesRenderer.sortingOrder = -1;
             }
         }
     }
